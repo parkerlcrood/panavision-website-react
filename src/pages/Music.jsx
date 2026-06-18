@@ -5,7 +5,7 @@ function Music() {
     return <div className="music">
         <div className="album-background">
             <div className="album-container">
-                <img src="../../css/media/Like Water.jpg"/>
+                <img src="/Like Water.jpg"/>
             </div>
             <div className="album-text">
                 <p>Like Water</p>
@@ -14,7 +14,7 @@ function Music() {
         </div>
         <div className="album-background">
             <div className="album-container">
-                <img src="../../css/media/Like Water Alt.jpeg"/>
+                <img src="/Like Water Alt.jpeg"/>
             </div>
             <div className="album-text">
                 <p>Like Water (Getting Killed Edition)</p>

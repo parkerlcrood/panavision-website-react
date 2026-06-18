@@ -8,14 +8,14 @@ function Home() {
                 <h1 className="promotext">Two Full Steps - New Release</h1>
                 <p id="promostatement">Listen on all platforms to the newest single by Pana-vision, BigBoyTV.wav. A divergence from their usual sound, a contrast so stark it broke one a window in one of the band member's houses (true story).</p>
             </div>
-            <div className="promoimagecontainer"><img className="promoimage" src="../../css/media/bigboytv.png"></img></div>
+            <div className="promoimagecontainer"><img className="promoimage" src="/bigboytv.png"></img></div>
         </div>
-        <div className="homelogocontainer"><img class="homepagelogo" src="../../css/media/PanavisionName.png"/></div>
+        <div className="homelogocontainer"><img class="homepagelogo" src="/PanavisionName.png"/></div>
         <div className="mysteriousPhrase"><p className="statement">Here, you're on the fast track to bigboytv status...</p></div>
         <div className="videocontainer">
             <video className="videoplayer" autoPlay loop muted playsInline poster="css/media/I touched the moss single cover.jpg">
-                    <source src="../../css/media/Benthic11.mp4" type="video/mp4"/>
-                    <img src="../../css/media/I touched the moss single cover.jpg" alt=""/>
+                    <source src="/Benthic11.mp4" type="video/mp4"/>
+                    <img src="/I touched the moss single cover.jpg" alt=""/>
             </video>
         </div>
         <div className="content">

@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-/* import "../pages/openMenu.js"; */
 
 function NavBar(){
     return (
         <header id="banner">
             <div id="topbanner">
-                <a href="/"><img className="bannername" src="css/media/PanavisionName.png"/></a>
+                <a href="/"><img className="bannername" src="/PanavisionName.png"/></a>
                     <section id="menubuttoncontainer">
                         <button id="menubutton">
                             <div id="menuicon"></div>

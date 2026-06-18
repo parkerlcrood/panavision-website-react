@@ -41,9 +41,9 @@ function MerchPage(){
 
     return (<div className="merchpage" id="top">
             <div className="cover">
-            <video autoPlay loop muted playsInline poster="css/media/I touched the moss single cover.jpg">
-                <source src="../../css/media/Benthic11.mp4" type="video/mp4"/>
-                <img src="../../css/media/I touched the moss single cover.jpg" alt=""/>
+            <video autoPlay loop muted playsInline poster="/I touched the moss single cover.jpg">
+                <source src="/Benthic11.mp4" type="video/mp4"/>
+                <img src="/I touched the moss single cover.jpg" alt=""/>
             </video>
         </div>
         <main id="top" className="mainlike">
