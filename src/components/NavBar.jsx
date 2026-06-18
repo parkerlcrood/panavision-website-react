@@ -4,7 +4,7 @@ function NavBar(){
     return (
         <header id="banner">
             <div id="topbanner">
-                <a href="/"><img className="bannername" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></a>
+                <Link to="/"><img className="bannername" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></Link>
                     <section id="menubuttoncontainer">
                         <button id="menubutton">
                             <div id="menuicon"></div>
@@ -18,8 +18,8 @@ function NavBar(){
                     <Link to="/music">Music</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact Us</Link>
-                    <Link to="/merch">Merch</Link>
                     <Link to="/upcomingshows">Upcoming Shows</Link>
+                    <Link to="/merchpage">Merch</Link>
                 </ul>
             </nav>
         </header>
