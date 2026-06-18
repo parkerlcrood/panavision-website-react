@@ -1,5 +1,5 @@
 export const getMerch = async () => {
-    const response = await fetch("/merchtable.json");
+    const response = await fetch(`${import.meta.env.BASE_URL}merchtable.json`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch merch");

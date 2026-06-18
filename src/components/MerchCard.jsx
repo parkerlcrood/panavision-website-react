@@ -7,7 +7,7 @@ function MerchCard({merch}) {
 
     return (<div className="merchitem">
         <div className="merchphoto">
-            <img src={merch.image} alt={merch.text} className="merchphoto"/>
+            <img src={`${import.meta.env.BASE_URL}${merch.image}`} alt={merch.text} className="merchphoto"/>
         </div>
         <a href="merchpages/LWGKCD.html" className="merchlink">
             <p className="merchtext">{merch.text}</p>

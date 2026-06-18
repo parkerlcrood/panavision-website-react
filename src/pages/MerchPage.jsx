@@ -83,12 +83,13 @@ function MerchPage(){
                     </div>
                 </div>
                 <section className="merchtable">
-                    {merchArray.map(
-                        (merch)=>
-                        merch.text.toLowerCase().includes(searchQuery.toLowerCase()) && (
-                        <MerchCard merch={merch} key={merch.text}/>
-                    )
-                )} 
+                    {merchArray
+                        .filter((merch) =>
+                            merch?.text?.toLowerCase?.().includes(searchQuery.toLowerCase())
+                        )
+                        .map((merch) => (
+                            <MerchCard merch={merch} key={merch.text} />
+                    ))}
             </section>
             </article>
             <article className="bttcontainer" id="backtotop">
