@@ -14,7 +14,7 @@ function FooterBar(){
                         <li><a href="https://music.apple.com/us/artist/pana-vision/1642425511" target="_blank">Apple Music</a></li> 
                     </ul>
                     <section className="logocontainer">
-                        <img className="logo" src="/PanavisionLogoTrans.png"/>
+                        <img className="logo" src={`${import.meta.env.BASE_URL}PanavisionLogoTrans.png`}/>
                     </section>
                 </section>
             </nav>      

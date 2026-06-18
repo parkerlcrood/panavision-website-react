@@ -24,7 +24,7 @@ function Videos() {
                     </span>  
                     <span class="wrap">
                         <figure class="videocolumn">
-                            <video class="videoembed" src="css/media/x.mp4" controls></video>
+                            <video class="videoembed" src={`${import.meta.env.BASE_URL}x.mp4`} controls></video>
                         </figure>
                         <figure class="videoexplainer">
                             <h3 class="videotitle">I Touched the Moss</h3>

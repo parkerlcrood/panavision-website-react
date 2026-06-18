@@ -4,7 +4,7 @@ function NavBar(){
     return (
         <header id="banner">
             <div id="topbanner">
-                <a href="/"><img className="bannername" src="/PanavisionName.png"/></a>
+                <a href="/"><img className="bannername" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></a>
                     <section id="menubuttoncontainer">
                         <button id="menubutton">
                             <div id="menuicon"></div>
@@ -13,13 +13,13 @@ function NavBar(){
             </div>
             <nav id="bannernav">
                 <ul id="bannerlinks">
-                    <li><a href="/" className="sociallist">Home</a></li>
-                    <li><a href="/Videos" className="sociallist">Videos</a></li>
-                    <li><a href="/Music" className="sociallist">Music</a> </li>
-                    <li><a href="/About" className="sociallist">About Us</a> </li>
-                    <li><a href="/Contact" className="sociallist">Contact Us</a></li>
-                    <li><a href="/MerchPage" className="sociallist">Merch</a></li>
-                    <li><a href="/UpcomingShows" className="sociallist">Upcoming Shows</a></li>
+                    <Link to="/">Home</Link>
+                    <Link to="/videos">Videos</Link>
+                    <Link to="/music">Music</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/contact">Contact Us</Link>
+                    <Link to="/merch">Merch</Link>
+                    <Link to="/upcomingshows">Upcoming Shows</Link>
                 </ul>
             </nav>
         </header>
