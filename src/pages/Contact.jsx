@@ -2,7 +2,7 @@ import '../../css/style.css';
 import {useState, useEffect} from "react";
 
 function Contact() {
-    return <div className="contact">
+    return <div className="contact" id="top">
         <div className="cover">
             <video autoPlay loop muted playsInline poster={`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`}>
                 <source src={`${import.meta.env.BASE_URL}Benthic11.mp4`} type="video/mp4"/>
@@ -24,7 +24,9 @@ function Contact() {
                 </section>
             </article>
             <article className="bttcontainer" id="backtotop">
-                    <a href="#top" ><p className="statement">Back to Top</p></a>
+                    <button onClick={() => window.scrollTo({ top:0, behavior: "smooth"})}>
+                        <p className="statement">Back to Top</p>
+                    </button>
             </article>
         </main>
     </div>

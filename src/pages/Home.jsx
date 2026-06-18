@@ -2,7 +2,7 @@ import '../../css/style.css';
 import {useState, useEffect} from "react";
 
 function Home() {
-    return <div className="favorites-empty">
+    return <div className="home" id="top">
         <div className="hero">
             <div className="promotextcontainer">
                 <h1 className="promotext">Two Full Steps - New Release</h1>
@@ -21,6 +21,11 @@ function Home() {
         <div className="content">
             <div className=""></div>
         </div>
+        <article className="bttcontainer" id="backtotop">
+                    <button onClick={() => window.scrollTo({ top:0, behavior: "smooth"})}>
+                        <p className="statement">Back to Top</p>
+                    </button>
+        </article>
     </div>
 }
 

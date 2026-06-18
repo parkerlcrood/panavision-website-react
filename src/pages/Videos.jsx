@@ -2,8 +2,8 @@ import '../../css/style.css';
 import {useState, useEffect} from "react";
 
 function Videos() {
-    return <div className="videos">
-        <main id="top">
+    return <div className="videos" id="top">
+        <main>
             <div class="mainlike">
             <article class="videopage">
                 <div class="cardtitle">
@@ -51,8 +51,10 @@ function Videos() {
                     </span>
                 </section>  
             </article>
-            <article class="bttcontainer" id="backtotop">
-                <a href="#top" ><p class="statement">Back to Top</p></a>
+            <article className="bttcontainer" id="backtotop">
+                    <button onClick={() => window.scrollTo({ top:0, behavior: "smooth"})}>
+                        <p className="statement">Back to Top</p>
+                    </button>
             </article>
             </div>
         </main>

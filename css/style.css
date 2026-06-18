@@ -362,6 +362,7 @@ html {
     flex-flow: row wrap;
     justify-content: space-around;
     margin-top: 3vw;
+    height: 100%;
 }
 
 .filtersbar{
@@ -779,6 +780,17 @@ footer{
     width:100%;
     background-color: black;
     position: relative;
+    bottom:0;
+    right:0;
+}
+
+.bttcontainer button{
+    background-color: transparent;
+    border: none;
+}
+
+.bttcontainer button p{
+    font-family: Helvetica Ultracondensed;
 }
 
 /* End Element Elements */
@@ -1028,7 +1040,7 @@ body {
     }
 
     .mainlike{
-        height:100vh;
+        height:100%;
     }
 
     
@@ -1266,6 +1278,29 @@ body {
 
     .videoplayer{
         width: 80%;
+    }
+
+    .album-background{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 100vw;
+        background-color: rgb(27, 27, 27);
+    }
+
+    .album-container{
+        width: 100%;
+    }
+
+    .musictable{
+        width: 100vw;
+        height: 50%;
+    }
+
+    .music{
+        height:100vh;
     }
 }
 
