@@ -7,7 +7,7 @@ function FooterBar(){
             <nav>
                 <section className="footerbox">
                     <ul className="lower">
-                        <li><a href="./Contact" target="_blank">Contact Us</a></li>
+                        <li><Link to={`contact`} target="_blank">Contact Us</Link></li>
                         <li><a href="https://www.youtube.com/@panavisionband" target="_blank">YouTube</a></li>
                         <li><a href="https://www.instagram.com/panavisionband/" target="_blank">Instagram</a></li>
                         <li><a href="https://open.spotify.com/artist/4OosEji0B0xTZfMmtXCS7r?si=ZA-Yx0mNSoOFzqbV-uGRFQ" target="_blank">Spotify</a></li>

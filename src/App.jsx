@@ -10,6 +10,7 @@ import Music from './pages/Music';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import UpcomingShows from './pages/UpcomingShows';
+import MerchDetailPage from "./components/MerchDetailPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/merchpage" element={<MerchPage/>}/>
           <Route path="/upcomingshows" element={<UpcomingShows/>} />
           <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/merch/:id" element={<MerchDetailPage/>} />
         </Routes>
         <FooterBar/>
       </main>

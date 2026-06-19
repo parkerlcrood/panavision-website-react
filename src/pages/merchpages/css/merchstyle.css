@@ -199,6 +199,24 @@ html {
     width: 100%;
 }
 
+.photorow li {
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.photorow li img {
+    width: clamp(40px, 5vw, 90px);
+    height: clamp(40px, 5vw, 90px);
+    object-fit: cover;
+    border: 1px solid white;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.photorow li:hover img,
+.photorow li.active img {
+    opacity: 1;
+}
 
 .imagecontainer {
     display: flex;
@@ -302,6 +320,7 @@ html {
 .merchimage {
     width:clamp(225px, 25vw, 500px);
     aspect-ratio: 1/1;
+    object-fit: cover;
     z-index: 0;
     border: 1px solid white;
 }
