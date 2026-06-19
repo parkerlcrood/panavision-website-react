@@ -10,7 +10,7 @@ function Home() {
             </div>
             <div className="promoimagecontainer"><img className="promoimage" src={`${import.meta.env.BASE_URL}bigboytv.png`}></img></div>
         </div>
-        <div className="homelogocontainer"><img class="homepagelogo" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></div>
+        <div className="homelogocontainer"><img className="homepagelogo" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></div>
         <div className="mysteriousPhrase"><p className="statement">Here, you're on the fast track to bigboytv status...</p></div>
         <div className="videocontainer">
             <video className="videoplayer" autoPlay loop muted playsInline poster="`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`">

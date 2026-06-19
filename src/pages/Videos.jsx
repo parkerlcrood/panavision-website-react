@@ -4,49 +4,49 @@ import {useState, useEffect} from "react";
 function Videos() {
     return <div className="videos" id="top">
         <main>
-            <div class="mainlike">
-            <article class="videopage">
-                <div class="cardtitle">
+            <div className="mainlike">
+            <article className="videopage">
+                <div className="cardtitle">
                     <h1>Videos</h1>
                 </div>
                 <hr/>
-                <section class="videotable">
-                    <span class="wrap">
-                        <figure class="videocolumn">
-                            <iframe class="videoembed" src="https://www.youtube-nocookie.com/embed/UwkVkf-6H-M?si=qc_OxxWThjUhFJQK" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <section className="videotable">
+                    <span className="wrap">
+                        <figure className="videocolumn">
+                            <iframe className="videoembed" src="https://www.youtube-nocookie.com/embed/UwkVkf-6H-M?si=qc_OxxWThjUhFJQK" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </figure>
-                        <figure class="videoexplainer">
-                            <div><h3 class="videotitle">Move Me, Wave</h3>
+                        <figure className="videoexplainer">
+                            <div><h3 className="videotitle">Move Me, Wave</h3>
                             </div>
-                            <div><p class="explainer">Shoutout Gavin Lee the GOAT fr</p>
+                            <div><p className="explainer">Shoutout Gavin Lee the GOAT fr</p>
                             </div>
                         </figure>
                     </span>  
-                    <span class="wrap">
-                        <figure class="videocolumn">
-                            <video class="videoembed" src={`${import.meta.env.BASE_URL}x.mp4`} controls></video>
+                    <span className="wrap">
+                        <figure className="videocolumn">
+                            <video className="videoembed" src={`${import.meta.env.BASE_URL}x.mp4`} controls></video>
                         </figure>
-                        <figure class="videoexplainer">
-                            <h3 class="videotitle">I Touched the Moss</h3>
-                            <p class="explainer">This is a description of that panavision moss video</p>
-                        </figure>
-                    </span>
-                    <span class="wrap">
-                        <figure class="videocolumn">
-                            <iframe class="videoembed" src="https://www.youtube-nocookie.com/embed/UI6zybd4VaE?si=4yRJSJdM_Nr-Vu6W" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </figure>
-                        <figure class="videoexplainer">
-                            <h3 class="videotitle">Benthic 11</h3>
-                            <p class="explainer">Those who know the location</p>
+                        <figure className="videoexplainer">
+                            <h3 className="videotitle">I Touched the Moss</h3>
+                            <p className="explainer">This is a description of that panavision moss video</p>
                         </figure>
                     </span>
-                    <span class="wrap">
-                        <figure class="videocolumn">
-                            <iframe class="videoembed" src="https://www.youtube-nocookie.com/embed/uqfRkmf0ROw?si=GyCZwgS-eADVHQ0-" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <span className="wrap">
+                        <figure className="videocolumn">
+                            <iframe className="videoembed" src="https://www.youtube-nocookie.com/embed/UI6zybd4VaE?si=4yRJSJdM_Nr-Vu6W" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </figure>
-                        <figure class="videoexplainer">
-                            <h3 class="videotitle">BigBoyTV.wav</h3>
-                            <p class="explainer">Was it worth destroying the sac house window</p>
+                        <figure className="videoexplainer">
+                            <h3 className="videotitle">Benthic 11</h3>
+                            <p className="explainer">Those who know the location</p>
+                        </figure>
+                    </span>
+                    <span className="wrap">
+                        <figure className="videocolumn">
+                            <iframe className="videoembed" src="https://www.youtube-nocookie.com/embed/uqfRkmf0ROw?si=GyCZwgS-eADVHQ0-" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        </figure>
+                        <figure className="videoexplainer">
+                            <h3 className="videotitle">BigBoyTV.wav</h3>
+                            <p className="explainer">Was it worth destroying the sac house window</p>
                         </figure>
                     </span>
                 </section>  
