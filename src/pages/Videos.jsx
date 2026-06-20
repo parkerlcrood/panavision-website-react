@@ -6,9 +6,6 @@ function Videos() {
         <main>
             <div className="mainlike">
             <article className="videopage">
-                <div className="cardtitle">
-                    <h1>Videos</h1>
-                </div>
                 <hr/>
                 <section className="videotable">
                     <span className="wrap">

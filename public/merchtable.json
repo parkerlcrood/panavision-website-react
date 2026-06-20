@@ -1,6 +1,6 @@
 [
     {
-        "id" : "1",
+        "id" : "lwgkcd",
         "image" : "/Like Water Alt.jpeg",
         "images" : ["/Like Water Alt.jpeg", "/bigboytv.png", "/LikeWaterBack.png"],
         "text": "Like Water (Getting Killed Edition) - CD",
@@ -10,7 +10,7 @@
         "price" : "$7"
     },          
     {
-        "id" : "2",
+        "id" : "lwcd",
         "image" : "/Like Water.jpg",
         "images" : ["/Like Water.jpg", "/LikeWaterBack.png"],
         "text": "Like Water - CD",
@@ -20,7 +20,7 @@
         "price" : "$7"
     },
     {
-        "id" : "3",
+        "id" : "pvkc",
         "image" : "/bigboytv.png",
         "images" : ["/bigboytv.png", "leftarrow.png"],
         "text": "Pana-vision Keychain",
@@ -30,7 +30,7 @@
         "price" : "$2"
     },
     {
-        "id" : "4",
+        "id" : "phts",
         "image" : "/I touched the moss single cover.jpg",
         "images" : ["/I touched the moss single cover.jpg"],
         "text": "Pana-vision -'Pretty Houses 1' T-Shirt",
@@ -40,7 +40,7 @@
         "price" : "$10"
     },
     {
-        "id" : "5",
+        "id" : "idek",
         "image" : "/benthic.png",
         "images" : ["/benthic.png"],
         "text": "Brother i cant believe i got this working",
@@ -50,7 +50,7 @@
         "price" : "$0"
     },
     {
-        "id" : "6",
+        "id" : "reactcool",
         "image" : "/rightarrow.png",
         "images" : ["/rightarrow.png"],
         "text": "The New React Exclusive Item",

@@ -3,7 +3,6 @@ import {useState, useEffect} from "react";
 import { getMerch } from "../services/api";
 import { Link } from "react-router-dom";
 import '../../css/style.css';
-//import "./cartMenu.js";
 
 function MerchPage(){
     const [searchQuery, setSearchQuery] = useState("");
@@ -69,8 +68,8 @@ function MerchPage(){
                 <img src={`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`} alt=""/>
             </video>
         </div>
-        <main id="top" className="mainlike">
-            <article>
+        <main id="top">
+            {/* <article>
                 <div className="cartmenu">
                     <button className="cartbutton"><p className="buttontext"></p></button>
                     <div id="cartcontainer" className="hidden">
@@ -78,7 +77,7 @@ function MerchPage(){
                         </ul>
                     </div>
                 </div>
-            </article>
+            </article> */}
             <article className="container">
                 <div className="cardtitle">
                     <h2>Merch</h2>
@@ -109,7 +108,6 @@ function MerchPage(){
                             <option value="Price (Low to High)"></option>
                             <option value="Price (High to Low)"></option>
                         </datalist>
-                        
                     </span>
                     </div>
                 </div>

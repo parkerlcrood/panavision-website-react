@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMerchById } from "../services/api";
 import { Link } from "react-router-dom";
-import "../pages/merchpages/css/merchstyle.css";
+import '../pages/merchpages/css/merchstyle.css';
 
 function MerchDetailPage() {
     const {id} = useParams();
@@ -39,7 +39,7 @@ function MerchDetailPage() {
     }
 
     return (
-        <>
+        <main id="top" className="merch-detail-page">
       <div>
         <Link to={'/merchpage'}>
           <h3 className="btmerch">Back to Merch</h3>
@@ -53,11 +53,13 @@ function MerchDetailPage() {
                 <img src={`${import.meta.env.BASE_URL}css/media/leftarrow.png`} alt="Prev"/>
               </div>
             </div>
-            <img
-              className="merchimage"
-              src={`${import.meta.env.BASE_URL}${images[activeImage]}`}
-              alt={merch.text}
-            />
+            {images.length > 0 && (
+                <img
+                  className="merchimage"
+                  src={`${import.meta.env.BASE_URL}${images[activeImage]}`}
+                  alt={merch.text}
+                />
+              )}
             <div id="arrow-right" onClick={goRight}>
               <div className="arrow-bg">
                 <img src={`${import.meta.env.BASE_URL}css/media/rightarrow.png`} alt="Next"/>
@@ -85,7 +87,7 @@ function MerchDetailPage() {
           </div>
         </section>
       </article>
-    </>
+    </main>
     );
 }
 

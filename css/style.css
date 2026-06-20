@@ -10,13 +10,17 @@
     font-family: Helvetica Ultracondensed;
     font-style: normal;
     font-weight: normal;
-    src: url('fonts/HelveticaUltraCompressed.otf');
+    src: url('./fonts/HelveticaUltraCompressed.otf');
 }
 
-html {
-    background: black;
-    font-family: Helvetica Ultracondensed;
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 /* End Reset */
@@ -24,10 +28,6 @@ html {
 
 
 /* Utility Classes*/
-
-#top{
-    content:"";
-}
 
 .offscreen {
     left:-100000vw;
@@ -57,7 +57,7 @@ html {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width:100%;
     height: clamp(350px,35vw,500px);
     background-image: url("media/I\ touched\ the\ moss\ single\ cover.jpg"); 
@@ -104,7 +104,7 @@ html {
     --TEXT-HOVER-COLOR: rgba(168, 168, 168, 0.822);
 
     /* Shadow */
-    --BANNER-SHADOW: 0rem .0rem 1vw rgb(0, 0, 0);
+    --BANNER-SHADOW: 0rem .0rem 1rem rgb(0, 0, 0);
     --PHOTO-SHADOW: 0rem 0vw .5vw rgb(0, 0, 0);
     --S-TEXT-SHADOW: 0rem 0rem 0.125em rgb(0, 0, 0);
     --TEXT-SHADOW: 0rem 0rem 0.055em rgb(0, 0, 0);
@@ -130,31 +130,22 @@ html {
     background-color: black;
 }
 
-
-#topbanner{
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    left: 0;
-    position: relative;
-    top: 0; 
-    width: 100%;
-    z-index: 5;
+#root{
+    width:100%;
 }
 
 .container {
     background-color: var(--CONTAINER-COLOR);
-    border-radius: 1vw;
     border:.5vw solid rgb(8, 8, 8);
     display: flex;
     flex-direction: column;
-    margin-bottom: 5vw;
+    margin-bottom: 0vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vw;
-    padding-bottom: 3vw;
     text-align: center;
-    width: 88vw;
+    padding-bottom: 3vw;
+    width: 90vw;
 }
 
 
@@ -171,6 +162,19 @@ html {
     margin-top: 5vw;
     padding: 1vw;
     text-align: center;
+}
+
+.videos .bttcontainer, .home .bttcontainer {
+    background-color: var(--CONTAINER-COLOR);
+    border-radius: 1vw;
+    border:.25vw solid var(--TEXT-COLOR);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+    padding: 1vw;
+    text-align: center;
+    width: clamp(100px, 15vw, 500px);
 }
 
 .promoimagecontainer{
@@ -220,18 +224,18 @@ html {
     align-items: center;
     height: 700px;
     width: 100vw;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(19, 14, 14);
 }
 
 .album-container{
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 50%;
+    width: 45%;
 }
 
 .album-container img{
-    width: 60%;
+    width: 65%;
     aspect-ratio: 1/1;
     height: auto;
 }
@@ -242,24 +246,9 @@ html {
     justify-content: flex-start;
     align-items: flex-start;
     width:50%;
-}
-
-.album-text p {
     padding: 0;
-    margin: 0;
 }
 
-#banner{
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    box-shadow: var(--BANNER-SHADOW);
-    left: 0;
-    position: relative;
-    top: 0; 
-    width: 100%;
-    z-index: 5;
-}
 
 .footerbox{
     width: 100%;
@@ -325,22 +314,9 @@ html {
     width:100%;
     display: flex;
     justify-content: center;
+    padding: 2rem
 }
 
-#bannerlinks{
-    position: sticky;
-    margin-left: .6vw;
-    padding-left: .6vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: var(--TEXT-COLOR);
-    font-size: clamp(20px, 3vw, 80px);
-    gap: 2vw;
-    text-shadow: var(--S-TEXT-SHADOW);
-    margin-bottom: .5vw;
-    background-color: black;
-}
 
 .twocolumns{
     display:flex;
@@ -368,7 +344,7 @@ html {
 .filtersbar{
     display: flex;
     flex-flow: row nowrap;
-    padding-left: 1vw;
+    padding: 1rem;
     height: 100%;
     justify-content: flex-start;
     align-items: flex-end;
@@ -410,10 +386,10 @@ div.open{
     position: fixed;
     align-items: flex-start;
     justify-content: flex-start;
-    width:500px;
+    width:90%;
     height:200px;
-    bottom:20px;
-    right:20px;  
+    bottom:10px;
+    right:10px;
     border-radius: 0%;
 }
 
@@ -484,6 +460,7 @@ div.open li p{
 }
 
 
+
 /* End Flexboxes*/
 
 
@@ -503,14 +480,13 @@ div.open li p{
     padding: 0;
 }
 
-.merchsearch{
-    align-self: flex-start;
+input{
+    padding: 0;
+    width: 200px;
 }
 
-.bannername{
-    width:clamp(200px, 25vw, 750px);
-    margin-left: 1vw;
-    margin-top: 1vw;
+.merchsearch{
+    margin-bottom: .5vw;
 }
 
 .merchitem{
@@ -551,7 +527,6 @@ div.open li p{
 
 .cover{
     position: fixed;
-    width: 100%;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -612,18 +587,20 @@ div.open li p{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width:50%;
     height:100%;
 }
 
 .promotext{
     font-size: clamp(50px, 5vw, 250px);
-    margin: 0;
 }
 
 #promostatement{
     color: black;
+    font-size: clamp(30px, 3vw, 150px);
+    margin: 0;
+    padding-right: 3rem;
 }
 
 /* End Flexbox Elements */
@@ -695,10 +672,6 @@ div.open li p{
     margin: 0;
 }
 
-#promostatement{
-    font-size: clamp(50px, 3vw, 150px);
-    padding: 1vw;
-}
 
 #promodesc{
     color: black;
@@ -727,7 +700,9 @@ div.open li p{
     width: 750px;
 }
 
-
+.upcomingshows .mainlike{
+        height:100vh;
+    }
 
 .videoembed {
     height:clamp(150px, 20vw, 1000px);
@@ -763,6 +738,14 @@ div.open li p{
     white-space: wrap;
 }
 
+#menubuttoncontainer{
+    display: none;
+}
+
+#menubutton{
+    display: none;
+}
+
 .statement{
     color: var(--TEXT-COLOR);
     font-size:clamp(17px,3vw,150px);
@@ -791,6 +774,10 @@ footer{
 
 .bttcontainer button p{
     font-family: Helvetica Ultracondensed;
+}
+
+.album-title{
+    font-size: clamp(40px, 7vw, 500px);
 }
 
 /* End Element Elements */
@@ -842,140 +829,17 @@ body {
     margin: 0;
 }
 
-.mainlike{
+main{
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    justify-content: flex-start;
     height:100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* End Fundamental Changes */
 
-
-
-/*Responsive Layout*/
 @media screen and (max-width:770px){
-
-    #banner.open{
-        display: flex;
-        flex-flow: column;
-        transform-origin: top center;
-        height: 100%;
-        animation: openMenu .2s ease-in-out forwards;
-    }
-    
-    #bannernav{
-        display : none;
-        transform-origin: top center;
-        animation: openMenu .2s ease-in-out forwards;
-    }
-
-    #bannernav.open{
-        display: block;
-    }
-
-    #menubuttoncontainer{
-        display: flex;
-        flex-flow: column nowrap;
-        height:50px;
-        aspect-ratio: 1/1;
-        width: auto;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #menubutton{
-        background-color: transparent;
-        width:50px;
-        height:50px;
-        position: relative; 
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        border: none;
-    }
-
-    #menuicon,
-    #menuicon::before,
-    #menuicon::after{
-        background-color: var(--TEXT-COLOR);
-        width:30px;
-        height:3px;
-        border-radius: 1.5px;
-        position: absolute;
-        transform-origin: top center;
-        transition: all 0.3s ease-in-out;
-    }
-
-    #menuicon{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #menuicon::before{
-        content:"";
-        top: -9px;
-        left: 0px;
-    }
-
-    #menuicon::after{
-        content:"";
-        top: 9px;
-        left: 0px;
-    }
-
-    #menuicon.open{
-        background-color: transparent;
-    }
-
-    #menuicon.open::before{
-        transform: rotate(315deg);
-        top: 0px;
-        left:-1px;
-    }
-
-    #menuicon.open::after{
-        transform: rotate(-315deg);
-        top: 0px;
-        left:1px;
-    }
-    
-    #bannerlinks {
-        list-style-type: none;
-        display: none;
-    }
-
-    #bannerlinks.open {
-        list-style-type: none;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        transform-origin: top center;
-        height: 100%;
-        z-index: inherit;
-    }
-
-    #bannerlinks.open li{
-        padding: 0.5rem;
-    }
-
-    #bannerlinks.open a{
-        display: block;
-        text-align: center;
-        width: 80%;
-        margin: auto;
-        font-size: min(35px, 25vw);
-    }
-    
-    #topbanner{
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-content: flex-start;
-        z-index: 5;
-    }
 
     .footerbox{
         width: 100%;
@@ -1052,7 +916,7 @@ body {
     }
 
     .mainlike{
-        height:100%;
+        width: 100%;
     }
 
     
@@ -1152,6 +1016,8 @@ body {
         justify-content: flex-start;
         width:90%;
         height:200px;
+        bottom:10px;
+        right:10px;
         border-radius: 0%;
     }
 
@@ -1243,6 +1109,7 @@ body {
 
     .promotext{
         font-size:50px;
+        text-align: center;
     }
 
     #promostatement{
@@ -1293,36 +1160,62 @@ body {
     }
 
     .album-background{
-        display: flex;
         flex-flow: column nowrap;
-        align-items: center;
-        justify-content: space-around;
+        justify-content: flex-start;
         height: 100%;
-        width: 100vw;
-        background-color: rgb(27, 27, 27);
     }
 
     .album-container{
         width: 100%;
+        padding: 2rem;
     }
 
-    .musictable{
-        width: 100vw;
-        height: 50%;
+
+    .container {
+        background-color: var(--CONTAINER-COLOR);
+        border:.5vw solid rgb(8, 8, 8);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0vw;
+        margin-top: 2rem;
+        align-self: center;
+        width: 90vw;
     }
 
-    .music{
-        height:100vh;
+    .merchpage .container {
+        background-color: var(--CONTAINER-COLOR);
+        border:.5vw solid rgb(8, 8, 8);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+        text-align: center;
+        padding-bottom: 3vw;
+        width: 100%;
     }
 
-    .about .mainlike, .contact .mainlike, .upcomingshows .mainlike{
-        height:100vh;
+    .filtersbar {
+        display: flex;
+        flex-flow: column;  
+        align-items: flex-start;
+        padding-bottom: .5vw;
     }
-}
 
-@media screen and (min-width:770px){
-    #menubuttoncontainer{
-        display: none;
+    .album-description, .album-title {
+        width:100%;
+        text-align: center;
+        padding: .5rem
+    }
+
+    .album-text {
+        width:90%;
+        margin-bottom: 2rem;
+    }
+
+    .album-container img{
+        width: 75%;
     }
 }
 
@@ -1354,12 +1247,6 @@ body {
         width: 70%;
     }
 
-    .filtersbar {
-        display: flex;
-        flex-flow: column;  
-        align-items: flex-start;
-        padding-bottom: .5vw;
-    }
 }
 
 @media screen and (max-width:429px){
@@ -1374,12 +1261,6 @@ body {
         height: auto;
     }
 
-    .filtersbar {
-        display: flex;
-        flex-flow: column;  
-        align-items: flex-start;
-        padding-bottom: .5vw;
-    }
 }
 
 @media screen and (min-width: 722px) and (max-width:933px){
@@ -1415,17 +1296,18 @@ body {
         }
 }
 
+@media screen and (max-width:950px){
+    .about .mainlike, .contact .mainlike{
+        height:100vh;
+    }
+}
+
+
+
+
 /*End Responsive Layout*/
 
 
 
 /*  Animations  */
 
-@keyframes openMenu {
-    0% {
-        transform: scaleY(0);
-    }
-    100% {
-        transform: scaleY(1);
-    }
-}
