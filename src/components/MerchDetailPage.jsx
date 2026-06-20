@@ -40,7 +40,7 @@ function MerchDetailPage() {
 
     return (
         <main id="top" className="merch-detail-page">
-      <div>
+      <div className="btmerchbanner">
         <Link to={'/merchpage'}>
           <h3 className="btmerch">Back to Merch</h3>
         </Link>
@@ -50,7 +50,7 @@ function MerchDetailPage() {
           <div className="imagecontainer">
             <div id="arrow-left" onClick={goLeft}>
               <div className="arrow-bg">
-                <img src={`${import.meta.env.BASE_URL}css/media/leftarrow.png`} alt="Prev"/>
+                <img src={`${import.meta.env.BASE_URL}leftarrow.png`} alt="Prev"/>
               </div>
             </div>
             {images.length > 0 && (
@@ -62,7 +62,7 @@ function MerchDetailPage() {
               )}
             <div id="arrow-right" onClick={goRight}>
               <div className="arrow-bg">
-                <img src={`${import.meta.env.BASE_URL}css/media/rightarrow.png`} alt="Next"/>
+                <img src={`${import.meta.env.BASE_URL}rightarrow.png`} alt="Next"/>
               </div>
             </div>
           </div>
