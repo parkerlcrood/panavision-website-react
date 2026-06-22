@@ -10,7 +10,26 @@ function MerchPage(){
     const [merchArray, setMerchArray] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-            
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [cartArray, setCartArray] = useState([]);
+
+    function toggleCartMenu() {
+        setIsCartOpen(prev => !prev);
+    }
+
+    function addItem(item) {
+        setCartArray(prev => [...prev, item]);
+    }
+
+          
+    const [favorites, setfavorites] = useState(() => {
+        return JSON.parse(localStorage.getItem("favorites")) || [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }, [favorites]);
+
     useEffect(() => {
         const loadMerch = async () => {
             try {
@@ -26,6 +45,11 @@ function MerchPage(){
 
         loadMerch();
     }, []);
+
+    useEffect(() => {
+        console.log(favorites);
+    }, [favorites]);
+            
 
     const getSortedMerch = (arr) => {
         const filtered = arr.filter((merch) =>
@@ -61,6 +85,18 @@ function MerchPage(){
         setSearchQuery("")
     };
 
+    function addFavorite(merch){
+        setfavorites(prev => [...prev, merch]);
+    }
+
+    function removeFavorite(index){
+        setfavorites(prev => {
+            const copy = [...prev];
+            copy.splice(index, 1);
+            return copy;
+        });
+    }
+
     return (<div className="merchpage">
             <div className="cover" id="top">
             <video autoPlay loop muted playsInline poster={`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`}>
@@ -69,15 +105,23 @@ function MerchPage(){
             </video>
         </div>
         <main id="top">
-            {/* <article>
-                <div className="cartmenu">
-                    <button className="cartbutton"><p className="buttontext"></p></button>
-                    <div id="cartcontainer" className="hidden">
-                        <ul id="cartitems">
-                        </ul>
-                    </div>
+            <div className={`cartmenu ${isCartOpen ? "open" : ""}`}>
+                <button onClick={toggleCartMenu}>
+                    {isCartOpen ? "Close Favorites" : "Favorites"}
+                </button>
+                <div id="cartcontainer" className={isCartOpen ? "" : "hidden"}>
+                    <ul>
+                        {favorites.map((item, index) => (
+                            <li key={index}>
+                                <p>{item.text}</p>
+                                <button onClick={() => removeFavorite(index)}>
+                                    Delete Item
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </article> */}
+            </div>
             <article className="container">
                 <div className="cardtitle">
                     <h2>Merch</h2>
@@ -113,7 +157,11 @@ function MerchPage(){
                 </div>
                 <section className="merchtable">
                     {getSortedMerch(merchArray).map((merch) => (
-                            <MerchCard merch={merch} key={merch.id} />
+                            <MerchCard
+                                merch={merch}
+                                key={merch.id}
+                                onFavorite={addFavorite}
+                            />
                         ))}
             </section>
             </article>

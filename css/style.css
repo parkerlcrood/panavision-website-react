@@ -356,13 +356,14 @@ img, video, iframe {
     position: fixed;
     align-items: center;
     justify-content: center;
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
     bottom:20px;
     right:20px;  
     background-color: white;
     border-radius: 50%;
     z-index: 100000;
+    border: 2px solid black;
 }
 
 .hidden{
@@ -405,7 +406,15 @@ div.open p{
     color: black;
 }
 
-.cartmenu button:hover{
+.cartmenu:hover{
+    background-color: var(--TEXT-HOVER-COLOR);
+}
+
+div.open:hover{
+    background-color: white;
+}
+
+div.open button:hover{
     background-color: var(--TEXT-HOVER-COLOR);
 }
 
@@ -420,18 +429,20 @@ div.open p{
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 50%;
     background-color: transparent;
+    font-size: 30px;
 }
 
-div.open button{
+div.open > button{
     display: flex;
-    width:20%;
-    height:10%;
+    width:10%;
+    height: 30px;
     border: none;
     border-radius: 0%;
     align-self: flex-start;
     justify-content: flex-start;
+    font-size: 25px;
+    padding-left: .5rem;
 }
 
 #cartcontainer{
@@ -442,6 +453,7 @@ div.open li{
     display: flex;
     flex-flow: row;
     width: 100%;
+    padding-left: .5rem;
 }
 
 div.open li button{
@@ -450,9 +462,6 @@ div.open li button{
     width: 20%;
 }
 
-div.open li button:hover{
-    background-color: var(--TEXT-HOVER-COLOR);
-}
 
 div.open li p{
     width: 80%;
@@ -1050,9 +1059,10 @@ main{
         border: none;
         border-radius: 50%;
         background-color: transparent;
+        font-size: 15px;
     }
 
-    div.open button{
+    div.open > button{
         display: flex;
         width:50%;
         height:10%;
@@ -1060,6 +1070,11 @@ main{
         border-radius: 0%;
         align-self: flex-start;
         justify-content: flex-start;
+        font-size: 20px;
+    }
+
+    div.open button{
+        border-radius: 0%;
     }
 
     #cartcontainer{
@@ -1074,7 +1089,7 @@ main{
 
     div.open li button{
         font-family: Helvetica Ultracondensed;
-        font-size: 20px;
+        font-size: 15px;
         width: 15%;
     }
 

@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function MerchCard({merch}) {
 
-    function addFavorite(){
-        console.log('clicked');
-    }
+function MerchCard({ merch, onFavorite }) {
 
     return (
         <div className="merchitem">
@@ -16,10 +14,15 @@ function MerchCard({merch}) {
             </Link>
             <p>{merch.price}</p>
             <div>
-                <button>Add to Cart</button>
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onFavorite(merch);
+                }}>Add to Favorites</button>
             </div>
         </div>
     );
+
 }
 
 export default MerchCard
