@@ -17,11 +17,6 @@ function MerchPage(){
         setIsCartOpen(prev => !prev);
     }
 
-    function addItem(item) {
-        setCartArray(prev => [...prev, item]);
-    }
-
-          
     const [favorites, setfavorites] = useState(() => {
         return JSON.parse(localStorage.getItem("favorites")) || [];
     });
@@ -45,10 +40,6 @@ function MerchPage(){
 
         loadMerch();
     }, []);
-
-    useEffect(() => {
-        console.log(favorites);
-    }, [favorites]);
             
 
     const getSortedMerch = (arr) => {
@@ -82,10 +73,13 @@ function MerchPage(){
 
     const handleSearch = (e) => {
         e.preventDefault();
-        setSearchQuery("")
+        setSearchQuery("");
     };
 
     function addFavorite(merch){
+        if (favorites.some(item => item.id === merch.id)){
+            return;
+        }
         setfavorites(prev => [...prev, merch]);
     }
 
@@ -153,6 +147,12 @@ function MerchPage(){
                             <option value="Price (High to Low)"></option>
                         </datalist>
                     </span>
+                        <button className="favoriteslink" onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            }}>
+                        <Link to ={'/Favorites'}><p>Go to Favorites</p></Link>
+                        </button>
                     </div>
                 </div>
                 <section className="merchtable">

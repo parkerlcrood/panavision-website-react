@@ -148,7 +148,23 @@ img, video, iframe {
     width: 90vw;
 }
 
+.btmerch{
+    display: flex;
+    font-size: clamp(20px, 2vw, 50px);
+    padding: .5rem;
+    background-color: black;
+    width: 100vw;
+    padding-left: 1.5vw;
+}
 
+.btmerch:hover{
+    color: var(--TEXT-HOVER-COLOR);
+}
+
+.btmerchbanner{
+    height: 50px;
+    background-color: black;
+}
 
 .bttcontainer {
     background-color: var(--CONTAINER-COLOR);
@@ -392,6 +408,12 @@ div.open{
     bottom:10px;
     right:10px;
     border-radius: 0%;
+}
+
+.favoriteslink{
+    background-color: transparent;
+    border: none;
+    font-size: clamp(20px, 5vw, 250px);
 }
 
 .cartmenu p{
@@ -709,9 +731,83 @@ input{
     width: 750px;
 }
 
-.upcomingshows .mainlike{
+.upcomingshows .mainlike, .favorites-empty{
         height:100vh;
+        margin: 1.5rem;
     }
+
+.favorites-empty{
+        height:100vh;
+        margin:1.5rem;
+    }
+
+.favorites-empty div{
+        display: none;
+    }
+
+.itemName{
+    width: 60%;
+    text-wrap: wrap;
+}
+
+.itemID{
+    width: 15%;
+    text-wrap: wrap;
+}
+
+.deleteButton{
+    width: 15%;
+    text-wrap: wrap;
+    font-size: clamp(15px, 2vw, 100px);
+}
+
+.favoriteItem{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin: .5rem;
+    padding: 1rem;
+}
+
+.itemImage{
+    display: flex;
+    width: 10%;
+    aspect-ratio: 1/1;
+    height: auto;
+    margin: .5rem;
+    padding: 1rem;
+}
+
+.tableEntry{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: black;
+    border-radius: 1rem;
+    background-color: aliceblue;
+}
+
+.favorites{
+    margin: 1.5rem;
+}
+
+.favoriteItem p{
+    color: black;
+}
+
+.favoritesTitle{
+    font-size: clamp(50px, 20vw, 150px);
+}
+
+.favoritesTable{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    background-color: white;
+    padding: 1rem;
+}
 
 .videoembed {
     height:clamp(150px, 20vw, 1000px);
@@ -1232,6 +1328,68 @@ main{
     .album-container img{
         width: 75%;
     }
+
+    .favorites-empty{
+        height:100vh;
+        margin:1.5rem;
+    }
+
+    .favorites-empty div{
+            display: none;
+        }
+
+    .itemName{
+        width: 100%;
+        text-align: center;
+    }
+
+    .itemID{
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .deleteButton{
+        width: 25%;
+    }
+
+    .favoriteItem{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        color: black;
+        margin: .5rem;
+        padding: 1rem;
+    }
+
+    .itemImage{
+        display: flex;
+        width: 75%;
+        margin: .5rem;
+        padding: 1rem;
+    }
+
+    .tableEntry{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        color: black;
+        border-radius: 1rem;
+        background-color: aliceblue;
+    }
+
+    .btmerch{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: clamp(20px, 2vw, 50px);
+    }
+
+    .btmerchbanner{
+        height: 50px;
+        background-color: black;
+    }
 }
 
 @media screen and (min-width:648px) and (max-width: 857px){
@@ -1311,8 +1469,8 @@ main{
         }
 }
 
-@media screen and (max-width:950px){
-    .about .mainlike, .contact .mainlike{
+@media screen and (max-width:1000px){
+    .about .mainlike, .contact .mainlike, .favorites-empty{
         height:100vh;
     }
 }
