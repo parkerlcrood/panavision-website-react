@@ -732,31 +732,31 @@ input{
 }
 
 .upcomingshows .mainlike, .favorites-empty{
-        height:100vh;
-        margin: 1.5rem;
-    }
+    height:100vh;
+    margin: 1.5rem;
+}
 
 .favorites-empty{
-        height:100vh;
-        margin:1.5rem;
-    }
+    height:100vh;
+    margin:1.5rem;
+}
 
 .favorites-empty div{
-        display: none;
-    }
+    display: none;
+}
 
 .itemName{
+    text-wrap: nowrap;
     width: 60%;
-    text-wrap: wrap;
 }
 
 .itemID{
-    width: 15%;
+    width: 20%;
     text-wrap: wrap;
 }
 
 .deleteButton{
-    width: 15%;
+    width: 10%;
     text-wrap: wrap;
     font-size: clamp(15px, 2vw, 100px);
 }
@@ -776,17 +776,15 @@ input{
     width: 10%;
     aspect-ratio: 1/1;
     height: auto;
-    margin: .5rem;
-    padding: 1rem;
 }
 
 .tableEntry{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: black;
     border-radius: 1rem;
-    background-color: aliceblue;
+    background-color: rgb(222, 255, 253);
 }
 
 .favorites{
@@ -795,6 +793,12 @@ input{
 
 .favoriteItem p{
     color: black;
+    padding-left: 5rem;
+}
+
+.tableEntry a{
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .favoritesTitle{
@@ -1374,9 +1378,6 @@ main{
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
-        color: black;
-        border-radius: 1rem;
-        background-color: aliceblue;
     }
 
     .btmerch{
@@ -1389,6 +1390,11 @@ main{
     .btmerchbanner{
         height: 50px;
         background-color: black;
+    }
+
+    .favoriteItem p{
+        color: black;
+        padding-left: 0rem;
     }
 }
 
