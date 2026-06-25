@@ -1,0 +1,74 @@
+[
+    {
+        "id" : "lwgkcd",
+        "image" : "/Like Water Alt.jpeg",
+        "images" : ["/Like Water Alt.jpeg", "/bigboytv.png", "/LikeWaterBack.png"],
+        "text": "Like Water (Getting Killed Edition) - CD",
+        "description" : "Yeah there's nothing special about this version of the CD, it just has a funny cover art.",
+        "pageurl" : "./merchpages/LWGKCD.html",
+        "funny" : "10",
+        "price" : "$7"
+    },          
+    {
+        "id" : "lwcd",
+        "image" : "/Like Water.jpg",
+        "images" : ["/Like Water.jpg", "/LikeWaterBack.png"],
+        "text": "Like Water - CD",
+        "description" : "The CD of our first album 'Like Water' with its original album art. Features all songs from the album and also a secret eleventh one.",
+        "pageurl" : "./merchpages/LWCD.html",
+        "funny" : "7",
+        "price" : "$7"
+    },
+    {
+        "id" : "pvkc",
+        "image" : "/bigboytv.png",
+        "images" : ["/bigboytv.png", "leftarrow.png"],
+        "text": "Pana-vision Keychain",
+        "description" : "Fresh off the 3D Printer",
+        "pageurl" : "./merchpages/LWGKCD.html",
+        "funny" : "1",
+        "price" : "$2"
+    },
+    {
+        "id" : "phts",
+        "image" : "/I touched the moss single cover.jpg",
+        "images" : ["/I touched the moss single cover.jpg"],
+        "text": "Pana-vision -'Pretty Houses 1' T-Shirt",
+        "description" : "The long awaited Pana-vision shirt",
+        "pageurl" : "./merchpages/LWGKCD.html",
+        "funny" : "4",
+        "price" : "$10"
+    },
+    {
+        "id" : "idek",
+        "image" : "/benthic.png",
+        "images" : ["/benthic.png"],
+        "text": "Brother i cant believe i got this working",
+        "description" : "This page is currently under construction...",
+        "pageurl" : "./merchpages/LWGKCD.html",
+        "funny" : "0",
+        "price" : "$0"
+    },
+    {
+        "id" : "reactcool",
+        "image" : "/rightarrow.png",
+        "images" : ["/rightarrow.png"],
+        "text": "The New React Exclusive Item",
+        "description" : "This page is currently under construction...",
+        "pageurl" : "./merchpages/LWGKCD.html",
+        "funny" : "3",
+        "price" : "$14"
+    },
+    {
+        "id": "lwbecd",
+        "image": "/rightarrow.png",
+        "images": [
+            "/rightarrow.png"
+        ],
+        "text": "Like Water - Backend Efition",
+        "description": "This page is currently under construction...",
+        "pageurl": "./merchpages/LWGKCD.html",
+        "funny": "3",
+        "price": "$14"
+    }
+]

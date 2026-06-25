@@ -1,0 +1,229 @@
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Ultracondensed;
+}
+
+@font-face {
+    font-family: Helvetica Ultracondensed;
+    font-style: normal;
+    font-weight: normal;
+    src: url('./HelveticaUltraCompressed.otf');
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+:root{
+    /* Colors */
+    --CONTAINER-COLOR:  rgba(14, 14, 14, 0.904);
+    --TEXT-COLOR: rgb(255, 255, 255);
+    --TEXT-HOVER-COLOR: rgba(168, 168, 168, 0.822);
+
+    /* Shadow */
+    --BANNER-SHADOW: 0rem .0rem 1rem rgb(0, 0, 0);
+    --PHOTO-SHADOW: 0rem 0vw .5vw rgb(0, 0, 0);
+    --S-TEXT-SHADOW: 0rem 0rem 0.125em rgb(0, 0, 0);
+    --TEXT-SHADOW: 0rem 0rem 0.055em rgb(0, 0, 0);
+    --VIDEO-TEXT-SHADOW: 0rem 0rem 1vw rgb(0, 0, 0);
+    --VIDEO-TITLE-SHADOW: 0rem 0rem 1vw rgb(0, 0, 0);
+
+    /* Size */
+    --VIDEO-WIDTH: 150px 10% 1000px;
+    --ICON-WIDTH: 40px;
+    --ICON-HEIGHT: 5px;
+    --TRANSLATE-Y: 12px;
+    --TRANSLATE-X-MINUS: -20px;
+
+}
+
+#topbanner{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    left: 0;
+    position: relative;
+    top: 0; 
+    width: 100%;
+    z-index: 5;
+}
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    box-shadow: var(--BANNER-SHADOW);
+    left: 0;
+    position: relative;
+    top: 0; 
+    width: 100%;
+    z-index: 5;
+}
+
+#bannerlinks li{
+    margin-left: .8vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: var(--TEXT-COLOR);
+    font-size: clamp(25px, 3vw, 80px);
+    text-shadow: var(--S-TEXT-SHADOW);
+    margin-bottom: .5vw;
+    background-color: black;
+}
+
+.bannername{
+    width:clamp(200px, 25vw, 750px);
+    margin-left: 1vw;
+    margin-top: 1vw;
+}
+
+#menubuttoncontainer{
+    display: none;
+}
+
+/*Responsive Layout*/
+@media screen and (max-width:770px){
+
+    #banner.open{
+        display: flex;
+        flex-flow: column;
+        transform-origin: top center;
+        height: 100%;
+        animation: openMenu .2s ease-in-out forwards;
+    }
+    
+    #bannernav{
+        display : none;
+        transform-origin: top center;
+        animation: openMenu .2s ease-in-out forwards;
+    }
+
+    #bannernav.open{
+        display: block;
+    }
+
+    #menubuttoncontainer{
+        display: flex;
+        flex-flow: column nowrap;
+        height:50px;
+        aspect-ratio: 1/1;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #menubutton{
+        background-color: transparent;
+        width:50px;
+        height:50px;
+        position: relative; 
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+
+    #menuicon,
+    #menuicon::before,
+    #menuicon::after{
+        background-color: var(--TEXT-COLOR);
+        width:30px;
+        height:3px;
+        border-radius: 1.5px;
+        position: absolute;
+        transform-origin: top center;
+        transition: all 0.3s ease-in-out forwards;
+    }
+
+    #menuicon{
+
+    }
+
+    #menuicon::before{
+        content:"";
+        top: -5px;
+        left: 0px;
+    }
+
+    #menuicon::after{
+        content:"";
+        top: 5px;
+        left: 0px;
+    }
+
+    #menuicon.open{
+        background-color: transparent;
+    }
+
+    #menuicon.open::before{
+        transform: rotate(45deg);
+        top: -10px;
+        left: 1px;
+    }
+
+    #menuicon.open::after{
+        transform: rotate(-45deg);
+        top: -10px;
+        left: -1px;
+    }
+    
+    #bannerlinks {
+        list-style-type: none;
+        display: none;
+    }
+
+    #bannerlinks.open {
+        list-style-type: none;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        transform-origin: top center;
+        z-index: inherit;
+        margin:0;
+        gap:1rem;
+    }
+
+    #bannerlinks.open li{
+        padding: 0.5rem;
+    }
+
+    #bannerlinks.open a{
+        display: block;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        font-size: min(35px, 25vw);
+    }
+    
+    #topbanner{
+        justify-content: space-between;
+        align-content: space-between;
+        z-index: 5;
+        width:100%;
+    }
+}
+
+@media screen and (min-width:770px){
+}
+
+
+@keyframes openMenu {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}

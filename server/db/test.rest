@@ -1,0 +1,13 @@
+###
+
+GET http://localhost:1337
+
+###
+
+POST http://localhost:1337
+Content-Type:application/json
+
+{
+    "text":"Like Water (Getting Killed) - CD",
+    "price":"$8"
+}

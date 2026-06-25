@@ -1,0 +1,15 @@
+export const getMerch = async () => {
+    const response = await fetch('/api/merch');
+    if (!response.ok) {
+        throw new Error("Failed to fetch merch");
+    }
+    const data = await response.json();
+    return data;
+};
+
+export const getMerchById = async (id) => {
+    const all = await getMerch();
+    const item = all.find((m) => m.id === id);
+    if (!item) throw new Error("Not found");
+    return item;
+}
