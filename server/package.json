@@ -2,10 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index",
+    "start": "node server",
+    "dev": "nodemon server",
+    "devAuth": "nodemon serverAuth",
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
@@ -13,8 +14,12 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-handlebars": "^9.0.1",
+    "jsonwebtoken": "^9.0.3",
     "moment": "^2.30.1",
     "pg": "^8.22.0"
   },

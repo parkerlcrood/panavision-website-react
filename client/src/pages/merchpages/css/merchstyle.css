@@ -68,6 +68,7 @@ html {
     padding: 2rem;
     justify-content: space-around;
     align-items: flex-start;
+    width: 100%;
 }
 
 #modal{
@@ -155,7 +156,7 @@ html {
 }
 
 .merchtextbox{
-    width:50%;
+    width: 40vw;
     flex-flow: column wrap;
     align-items: center;
 }
@@ -178,7 +179,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 5rem;
-    width: 40%;
+    width: 35vw;
 }
 
 .photobox{
@@ -239,8 +240,10 @@ html {
     flex: 1;
     background-color: rgba(226, 226, 226, 0.089);
     background-size: cover;
-    width: clamp(2rem, 4vw, 7rem);
-    height: clamp(2rem, 4vw, 7rem);
+    font-size: clamp(1rem, 3vw, 5rem);
+    width: clamp(50px, 3vw, 100px);
+    aspect-ratio: 1/1;
+    height: auto;
 }
 
 .btmerch{
@@ -491,15 +494,6 @@ header{
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
-    }
-
-    .arrow-bg img{
-        flex: 1;
-        background-color: rgba(226, 226, 226, 0.089);
-        background-size: cover;
-        font-size: clamp(1rem, 3vw, 5rem);
-        width: 35px;
-        height: 35px;
     }
 
     .photorow{

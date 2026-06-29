@@ -24,7 +24,7 @@ function Favorite() {
     };
 
     function removeFavorite(id){
-        setfavorites(prev => prev.filter(item => item.id!==id));
+        setfavorites(prev => prev.filter(item => item.merch_id!==id));
     }
 
     function getId(item){
@@ -52,7 +52,7 @@ function Favorite() {
                             </button>
                     </li>
                     {favorites.map((item) => (
-                        <FavoriteItem key = {item.id}  
+                        <FavoriteItem key = {item.merch_id}  
                             item = {item}
                             removeFav = {removeFavorite}      
                         />

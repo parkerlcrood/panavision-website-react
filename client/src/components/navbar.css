@@ -31,7 +31,7 @@ img, video, iframe {
     --TEXT-HOVER-COLOR: rgba(168, 168, 168, 0.822);
 
     /* Shadow */
-    --BANNER-SHADOW: 0rem .0rem 1rem rgb(0, 0, 0);
+    --BANNER-SHADOW: 0rem 0rem 0rem rgb(0, 0, 0);
     --PHOTO-SHADOW: 0rem 0vw .5vw rgb(0, 0, 0);
     --S-TEXT-SHADOW: 0rem 0rem 0.125em rgb(0, 0, 0);
     --TEXT-SHADOW: 0rem 0rem 0.055em rgb(0, 0, 0);

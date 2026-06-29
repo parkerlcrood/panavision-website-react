@@ -1,0 +1,36 @@
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Helvetica Ultracondensed;
+    font-style: normal;
+    font-weight: normal;
+    src: url('./fonts/HelveticaUltraCompressed.otf');
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility Classes */
+
+.adminlogin {
+    height:100vh;
+    background-color: white;
+}
+
+.loginMessage{
+    color: black;
+    font-size: clamp(5px, 2vw, 50px);
+}

@@ -67,7 +67,7 @@ function MerchDetailPage() {
                 <img
                   className="merchimage"
                   src={`${import.meta.env.BASE_URL}${images[activeImage]}`}
-                  alt={merch.text}
+                  alt={merch.merch_name}
                 />
               )}
             <div id="arrow-right" onClick={goRight}>
@@ -83,17 +83,17 @@ function MerchDetailPage() {
                 className={i === activeImage ? "active" : ""}
                 onClick={() => setActiveImage(i)}
               >
-                <img src={`${import.meta.env.BASE_URL}${img}`} alt={`${merch.text} thumbnail ${i + 1}`}/>
+                <img src={`${import.meta.env.BASE_URL}${img}`} alt={`${merch.merch_name} thumbnail ${i + 1}`}/>
               </li>
             ))}
           </ul>
         </div>
         <section className="merchtextbox">
           <div className="merchname">
-            <h2>{merch.text}</h2>
+            <h2>{merch.merch_name}</h2>
           </div>
           <div className="merchdesc">
-            <p>{merch.description}</p>
+            <p>{merch.merch_description}</p>
           </div>
         </section>
       </article>

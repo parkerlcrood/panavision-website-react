@@ -1,4 +1,6 @@
 import MerchCard from "../components/MerchCard";
+import FavoriteItem from "../components/FavoriteItem";
+import FavListItem from "../components/FavListItem";
 import {useState, useEffect} from "react";
 import { getMerch } from "../services/api";
 import { Link } from "react-router-dom";
@@ -39,23 +41,20 @@ function MerchPage(){
         }
 
         loadMerch();
-    }, []);
-            
+    }, []);  
 
     const getSortedMerch = (arr) => {
         const filtered = arr.filter((merch) =>
-            merch?.text?.toLowerCase?.().includes(searchQuery.toLowerCase())
+            merch?.merch_name?.toLowerCase?.().includes(searchQuery.toLowerCase())
         );
-
-        const parsePrice = (price) => parseFloat(price.replace(/[^0-9.]/g, ""));
 
         switch (sortOption) {
             case "Alphabetical (A-Z)":
-            return [...filtered].sort((a, b) => a.text.localeCompare(b.text));
+            return [...filtered].sort((a, b) => a.merch_name.localeCompare(b.merch_name));
             case "Price (Low to High)":
-            return [...filtered].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+            return [...filtered].sort((a, b) => a.merch_price - b.merch_price);
             case "Price (High to Low)":
-            return [...filtered].sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+            return [...filtered].sort((a, b) => b.merch_price - a.merch_price);
             case "Funny Factor (Low to High)":
             return [...filtered].sort((a, b) => Number(a.funny) - Number(b.funny));
             default:
@@ -81,7 +80,7 @@ function MerchPage(){
     };
 
     function addFavorite(merch){
-        if (favorites.some(item => item.id === merch.id)){
+        if (favorites.some(item => item.merch_id === merch.merch_id)){
             return;
         }
         setfavorites(prev => [...prev, merch]);
@@ -107,16 +106,14 @@ function MerchPage(){
                 <button onClick={toggleCartMenu}>
                     {isCartOpen ? "Close Favorites" : "Favorites"}
                 </button>
-                <div id="cartcontainer" className={isCartOpen ? "" : "hidden"}>
-                    <ul>
-                        {favorites.map((item, index) => (
-                            <li key={index}>
-                                <p>{item.text}</p>
-                                <button onClick={() => removeFavorite(index)}>
-                                    Delete Item
-                                </button>
-                            </li>
-                        ))}
+                <div className={isCartOpen ? "" : "hidden"}>
+                    <ul id="cartcontainer">
+                        {favorites.map((item) => (
+                        <FavListItem key = {item.merch_id}  
+                            item = {item}
+                            removeFav = {removeFavorite}      
+                        />
+                    ))}
                     </ul>
                 </div>
             </div>
@@ -124,7 +121,7 @@ function MerchPage(){
                 <div className="cardtitle">
                     <h2>Merch</h2>
                     <div className="filtersbar">
-                    <label className="title" htmlFor="searchbar"><p>Search Items:</p></label>
+                    <label className="title" htmlFor="searchbar"><p className="filtername">Search Items:</p></label>
                     <form onSubmit={handleSearch} className="search-form">
                         <input id="searchbar"
                             type="text"
@@ -133,7 +130,7 @@ function MerchPage(){
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </form>
-                    <label className="title" htmlFor='sortbar'><p>Sort:</p></label>
+                    <label className="title" htmlFor='sortbar'><p className="filtername">Sort:</p></label>
                     <span className="filters">
                         <input 
                             list="sorting-options" 
@@ -155,7 +152,7 @@ function MerchPage(){
                             e.preventDefault();
                             e.stopPropagation();
                             }}>
-                        <Link to ={'/Favorites'}><p>Go to Favorites</p></Link>
+                        <Link to ={'/Favorites'}><p className="filtername">Go to Favorites</p></Link>
                         </button>
                     </div>
                 </div>
@@ -163,8 +160,9 @@ function MerchPage(){
                     {getSortedMerch(merchArray).map((merch) => (
                             <MerchCard
                                 merch={merch}
-                                key={merch.id}
+                                key={merch.merch_id}
                                 onFavorite={addFavorite}
+                                isFavorite={favorites.some(item => item.merch_id === merch.merch_id)}
                             />
                         ))}
             </section>

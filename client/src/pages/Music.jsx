@@ -6,7 +6,7 @@ function Music() {
         <div className="musictable">
             <div className="album-background">
                 <div className="album-container">
-                    <img src={`${import.meta.env.BASE_URL}Like Water.jpg`}/>
+                    <img src={`${import.meta.env.BASE_URL}LikeWater.jpg`}/>
                 </div>
                 <div className="album-text">
                     <p className="album-title">Like Water</p>
@@ -15,7 +15,7 @@ function Music() {
             </div>
             <div className="album-background">
                 <div className="album-container">
-                    <img src={`${import.meta.env.BASE_URL}Like Water Alt.jpeg`}/>
+                    <img src={`${import.meta.env.BASE_URL}LikeWaterAlt.jpeg`}/>
                 </div>
                 <div className="album-text">
                     <p className="album-title">Like Water (Getting Killed Edition)</p>

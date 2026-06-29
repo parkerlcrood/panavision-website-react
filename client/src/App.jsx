@@ -11,6 +11,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import UpcomingShows from './pages/UpcomingShows';
 import MerchDetailPage from "./components/MerchDetailPage";
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
@@ -28,6 +31,12 @@ function App() {
           <Route path="/upcomingshows" element={<UpcomingShows/>} />
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/merch/:id" element={<MerchDetailPage/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/admin" element={
+            <ProtectedRoute>
+              <Admin/>
+            </ProtectedRoute>
+            } />
         </Routes>
       </main>
       <FooterBar/>

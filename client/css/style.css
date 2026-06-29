@@ -99,7 +99,7 @@ img, video, iframe {
 
 :root{
     /* Colors */
-    --CONTAINER-COLOR:  rgba(14, 14, 14, 0.904);
+    --CONTAINER-COLOR:  rgba(199, 88, 88, 0.904);
     --TEXT-COLOR: rgb(255, 255, 255);
     --TEXT-HOVER-COLOR: rgba(168, 168, 168, 0.822);
 
@@ -352,10 +352,9 @@ img, video, iframe {
 .merchtable{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 3vw;
     height: 100%;
-    gap: 3rem;
 }
 
 .filtersbar{
@@ -381,6 +380,7 @@ img, video, iframe {
     border-radius: 50%;
     z-index: 100000;
     border: 2px solid black;
+    overflow-y: auto;
 }
 
 .hidden{
@@ -404,8 +404,8 @@ div.open{
     position: fixed;
     align-items: flex-start;
     justify-content: flex-start;
-    width:90%;
-    height:200px;
+    width:95%;
+    height:250px;
     bottom:10px;
     right:10px;
     border-radius: 0%;
@@ -437,24 +437,19 @@ div.open:hover{
     background-color: white;
 }
 
-div.open button:hover{
-    background-color: var(--TEXT-HOVER-COLOR);
-}
-
-.cartmenu button:active{
-    background-color: rgb(36, 36, 36);
-}
-
 .cartmenu button{
     display: flex;
     width:100%;
-    height:100%;
     align-items: center;
     justify-content: center;
     border: none;
     background-color: transparent;
     font-size: 30px;
     color: black;
+}
+
+.cartmenu button:hover{
+    color: var(--TEXT-HOVER-COLOR);
 }
 
 div.open > button{
@@ -472,24 +467,22 @@ div.open > button{
 
 #cartcontainer{
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 div.open li{
     display: flex;
-    flex-flow: row;
-    width: 100%;
     padding-left: .5rem;
 }
 
 div.open li button{
     font-family: Helvetica Ultracondensed;
     font-size: 20px;
-    width: 20%;
 }
 
 
 div.open li p{
-    width: 80%;
     margin: 0;
 }
 
@@ -507,7 +500,7 @@ div.open li p{
     padding-bottom: .5vw;
 }
 
-.filtersbar .title p{
+.filtername{
     align-self: flex-start;
     font-size: clamp(20px,3vw,250px);
     margin: 0;
@@ -749,7 +742,6 @@ input{
 }
 
 .itemName{
-    text-wrap: nowrap;
     width: 60%;
 }
 
@@ -772,6 +764,57 @@ input{
     color: black;
     margin: .5rem;
     padding: 1rem;
+}
+
+.miniPrice{
+    text-align: center;
+}
+
+.miniName{
+    text-align: center;
+    text-wrap: wrap;
+    max-width: 15ch;
+}
+
+.miniName a{
+    text-decoration: none;
+}
+
+
+.miniButton{
+    width: 100%;
+}
+
+.favoriteItemMini{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin: .5rem;
+    padding: 1rem;
+    background-color: rgb(222, 255, 253);
+    max-width: 25%;
+}
+
+.miniImageContainer{
+    display: flex;
+    width: 50%;
+}
+
+.miniOtherContainer{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 45%;
+    height: 100%;
+    justify-content: space-between;
+    font-size: ;
+}
+
+.miniImage{
+    width: 100px;
+    aspect-ratio: 1/1;
+    height: auto;
 }
 
 .itemImage{
@@ -900,7 +943,6 @@ footer{
 
 li{
     list-style-type: none;
-    text-wrap: nowrap;
 }
 
 a:hover img{
@@ -1178,22 +1220,22 @@ main{
 
     div.open li{
         display: flex;
-        flex-flow: row;
-        width: 100%;
     }
 
     div.open li button{
         font-family: Helvetica Ultracondensed;
         font-size: 15px;
-        width: 15%;
-    }
-
-    div.open li button:hover{
-        background-color: var(--TEXT-HOVER-COLOR);
     }
 
     div.open li p{
         width: 85%;
+        text-wrap: wrap;
+        max-width: 100px;
+    }
+
+    .itemLink{
+        text-wrap: wrap;
+        text-align: center;
     }
 
     .promoimage{
@@ -1475,9 +1517,6 @@ main{
         height:100vh;
     }
 }
-
-
-
 
 /*End Responsive Layout*/
 
