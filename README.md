@@ -171,7 +171,7 @@ The application uses this variable to communicate with the deployed backend.
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/panavision-website.git
+git clone https://github.com/parkerlcrood/panavision-website-react.git
 ```
 
 Install dependencies:
@@ -240,4 +240,4 @@ Environment variables are configured through the Vercel dashboard.
 
 ## License
 
-This project was created as a portfolio project, spawning for my band's need for an official website.
+This project was created as a portfolio project, spawning from my band's need for an official website.
