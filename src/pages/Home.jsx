@@ -1,0 +1,29 @@
+import '../../css/style.css';
+import {useState, useEffect} from "react";
+import BackToTop from '../components/BackToTop';
+
+function Home() {
+    return <div className="home" id="top">
+        <div className="hero">
+            <div className="promotextcontainer">
+                <h1 className="promotext">Two Full Steps - New Release</h1>
+                <p id="promostatement">Listen on all platforms to the newest single by Pana-vision, Two Full Steps. More importantly it contains the song 'BigBoyTV.wav', a divergence from their usual sound, a contrast so stark it broke a window in one of the band member's houses (true story).</p>
+            </div>
+            <div className="promoimagecontainer"><img className="promoimage" src={`${import.meta.env.BASE_URL}bigboytv.png`}></img></div>
+        </div>
+        <div className="homelogocontainer"><img className="homepagelogo" src={`${import.meta.env.BASE_URL}PanavisionName.png`}/></div>
+        <div className="mysteriousPhrase"><p className="statement">Here, you're on the track to BigBoyTV status...</p></div>
+        <div className="videocontainer">
+            <video className="videoplayer" autoPlay loop muted playsInline poster="`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`">
+                    <source src={`${import.meta.env.BASE_URL}Benthic11.mp4`} type="video/mp4"/>
+                    <img src={`${import.meta.env.BASE_URL}I touched the moss single cover.jpg`} alt=""/>
+            </video>
+        </div>
+        <div className="content">
+            <div className=""></div>
+        </div>
+        <BackToTop/>
+    </div>
+}
+
+export default Home;

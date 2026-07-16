@@ -1,0 +1,580 @@
+/* 
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Helvetica Ultracondensed;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../../../css/fonts/HelveticaUltraCompressed.otf');
+}
+
+html {
+    background: black;
+    font-family: Helvetica Ultracondensed;
+    scroll-behavior: smooth;
+}
+
+/* End Reset */
+
+
+
+/* Utility Classes*/
+
+
+
+
+/* End Utility Classes*/
+
+
+
+/* Variables */
+
+:root{
+    /* Colors */
+    --CONTAINER-COLOR:  rgba(14, 14, 14, 0.904);
+    --TEXT-COLOR: rgb(255, 255, 255);
+    --TEXT-HOVER-COLOR: rgba(168, 168, 168, 0.822);
+
+    /* Shadow */
+    --BANNER-SHADOW: 0rem .5rem 1vw rgb(0, 0, 0);
+    --PHOTO-SHADOW: 0rem 0vw 2rem rgb(0, 0, 0);
+    --S-TEXT-SHADOW: 0rem 0rem 0.125em rgb(0, 0, 0);
+    --TEXT-SHADOW: 0rem 0rem 0.055em rgb(0, 0, 0);
+    --VIDEO-TEXT-SHADOW: 0rem 0rem 1vw rgb(0, 0, 0);
+    --VIDEO-TITLE-SHADOW: 0rem 0rem 1vw rgb(0, 0, 0);
+
+    /* Size */
+    --VIDEO-WIDTH: 150px 10% 1000px
+    --ICON-WIDTH: 40px;
+    --ICON-HEIGHT: 5px;
+    --TRANSLATE-Y: 12px;
+    --TRANSLATE-X-MINUS: -20px;
+
+}
+
+
+
+/* Utility Containers */
+
+.merchpage{
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5000;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    animation: showModal .15s ease-in;
+}
+
+#modal img{
+    height:45vw;
+    width:45vw;
+    border:.5rem solid white;
+}
+
+.hidden {
+    display: none;
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    /* animation: closeModal .5s ease-in-out; */
+}
+
+/* End Utility Containers */
+
+
+
+/* Flexboxes */
+
+#banner{
+    background-color: black;
+    width: 100vw;
+}
+
+.footerbox{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--TEXT-COLOR);
+}
+
+.lower{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: var(--TEXT-COLOR);
+    font-size: clamp(20px, 3.5vw, 80px);
+    gap: 3vw;
+    padding: 1vw;
+    
+}
+
+.logocontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#bannerlinks{
+    display: flex;
+    color: var(--TEXT-COLOR);
+    font-size: clamp(20px, 3vw, 80px);
+    gap: 2rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    background-color: black;
+
+}
+
+.separator{
+    margin-bottom: .5rem;
+    width: 100%;
+}
+
+.merchtextbox{
+    width: 40vw;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.merchname h2{
+    align-self: flex-start;
+    font-size: clamp(10px, 6vw, 250px);
+    color: white;
+    margin-top:0;
+}
+
+.merchprice{
+    font-size: clamp(10px, 4vw, 250px);
+    margin-bottom: 3vw;
+}
+
+.merchdescription{
+    font-size: clamp(10px, 3vw, 250px);
+
+}
+
+#itembox{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 35vw;
+}
+
+.photobox{
+    height: 50px;
+    width: 50px;
+}
+
+.photorow{
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    gap: 3vw;
+    background-color: rgba(0, 0, 0, 0.171);
+    height: 100%;
+    width: 100%;
+}
+
+.photorow li {
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.photorow li img {
+    width: clamp(40px, 5vw, 90px);
+    height: clamp(40px, 5vw, 90px);
+    object-fit: cover;
+    border: 1px solid white;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.photorow li:hover img,
+.photorow li.active img {
+    opacity: 1;
+}
+
+.imagecontainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    margin: 0;
+}
+
+.arrow-bg img:hover{
+    background-color: rgba(26, 26, 26, 0.658);
+}
+
+.arrow-bg img:active{
+    background-color: black;
+}
+
+.arrow-bg img{
+    flex: 1;
+    background-color: rgba(226, 226, 226, 0.089);
+    background-size: cover;
+    font-size: clamp(1rem, 3vw, 5rem);
+    width: clamp(50px, 3vw, 100px);
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.btmerch{
+    display: flex;
+    font-size: clamp(20px, 2vw, 50px);
+    padding: .5rem;
+    background-color: black;
+    width: 100vw;
+    padding-left: 1.5vw;
+}
+
+/* End Flexboxes*/
+
+
+
+/* Flexbox Elements */
+
+.bannername{
+    width:clamp(200px, 25vw, 750px);
+    padding-bottom: 1rem;
+}
+
+#backtotop:hover{
+    opacity: 75%;
+}
+
+.btmerch:hover{
+    color: var(--TEXT-HOVER-COLOR);
+}
+
+#backtotop a:any-link .statement{
+    color: var(--TEXT-COLOR);
+    text-decoration: none;
+}
+
+#backtotop .statement{
+    font-size: clamp(20px, 3vw, 250px);
+    text-shadow: var(--S-TEXT-SHADOW);
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cover{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1000;
+}
+
+.logo{
+    width:clamp(50px, 5vw, 100px);
+    aspect-ratio: 1 / 1;
+    margin-right: 2rem;
+    z-index: 1000;
+}
+
+#topbanner{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    left: 0;
+    top: 0; 
+    width: 100%;
+}
+
+/* End Flexbox Elements */
+
+
+
+/* Element Elements */
+
+.merchimage {
+    width:clamp(225px, 20vw, 500px);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    z-index: 0;
+    border: 1px solid white;
+}
+
+.merchtext{
+    color: var(--TEXT-COLOR);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+    margin-right: 10%;
+    text-shadow: var(--S-TEXT-SHADOW);
+    white-space: wrap;
+}
+
+/* End Element Elements */
+
+
+
+/* Fundamental Changes */
+footer{
+    width:100%;
+    background-color: black;
+    position: relative;
+}
+
+li{
+    list-style-type: none;
+    text-wrap: nowrap;
+}
+
+.merch-detail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(43,43,43,.493);
+    min-height: 100vh;
+}
+
+a:hover img{
+    background-color: rgba(0, 0, 0, 0.363);
+    opacity: .75;
+}
+
+h3 {
+    color: var(--TEXT-COLOR);
+    font-size: clamp(25px, 10vw, 200px);
+}
+
+p {
+    color: var(--TEXT-COLOR);
+    font-size: clamp(25px, 5vw, 75px);
+}
+
+a{
+    color:var(--TEXT-COLOR);
+}
+
+a:hover, a p:hover{
+    color:var(--TEXT-HOVER-COLOR);
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    background-color: rgba(43, 43, 43, 0.493);
+}
+
+header{
+    margin: 0;
+    padding: 0;
+}
+
+/* End Fundamental Changes */
+
+
+
+/*Responsive Layout*/
+@media screen and (max-width:770px){
+
+    .footerbox{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .lower{
+        flex-direction: column;
+        gap:0;
+        margin:0;
+        padding:0;
+        width:50%;
+        height:100%;
+    }
+
+    .lower li{
+        width:100%;
+        text-align: center;
+        border-top: .1vw solid var(--TEXT-COLOR);
+        border-right: .1vw solid var(--TEXT-COLOR);
+        padding: 1vw;
+    }
+
+    .lower li a:hover{
+        color:var(--TEXT-HOVER-COLOR);
+    }
+
+    .logo{
+        width:clamp(100px, 50%, 500px);
+        justify-self: center;
+        align-self: center;
+        aspect-ratio: 1 / 1;
+        height:auto;
+        z-index: 1000;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+    }
+
+    .logocontainer{
+        display: flex;
+        flex-direction: column;
+        width:50%;
+        height:100%;
+        padding: 0;
+    }
+
+    .merchtextbox{
+        width:100%;
+        flex-flow: column wrap;
+    }
+
+    .merchname h2{
+        font-size: clamp(50px, 6vw, 250px);
+        text-align: center;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .merchdesc p{
+        font-size: clamp(30px, 4vw, 250px);
+        text-align: center;
+
+    }
+
+    .btmerch{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: clamp(20px, 2vw, 50px);
+    }
+
+    #itembox{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0rem;
+        width: 100%;
+    }
+
+    .merchpage{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+
+    .photorow{
+        padding: .5rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 3vw;
+        background-color: rgba(0, 0, 0, 0.171);
+        height: 100%;
+        width: 100%;
+    }
+
+    .merchimage {
+        width:70%;
+        aspect-ratio: 1/1;
+        z-index: 0;
+        border: 1px solid white;
+    }
+
+    .imagecontainer {
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .separator{
+        display: none;
+    }
+
+    #modal img{
+        height:80vw;
+        width:80vw;
+        margin-top: -23rem;
+        border:.2rem solid white;
+    }
+}
+
+
+
+@media screen and (min-width:648px) and (max-width: 857px){
+
+}
+
+@media screen and (min-width:557px) and (max-width: 647px){
+
+}
+
+@media screen and (max-width:429px){
+
+}
+
+@media screen and (min-width: 722px) and (max-width:933px){
+
+    #modal img{
+        margin-top: 5rem;
+        height:80vh;
+        width:80vh;
+        border:.2rem solid white;
+    }
+
+}
+
+/*End Responsive Layout*/
+
+
+
+/*  Animations  */
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

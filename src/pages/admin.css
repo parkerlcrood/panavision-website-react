@@ -1,0 +1,210 @@
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Helvetica Ultracondensed;
+    font-style: normal;
+    font-weight: normal;
+    src: url('./fonts/HelveticaUltraCompressed.otf');
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility Classes */
+
+.adminlogin {
+    height:100vh;
+    background-color: white;
+}
+
+.loginMessage{
+    color: black;
+    font-size: clamp(5px, 2vw, 50px);
+}
+
+.adminpanel{
+    height:100%;
+    min-height: 100vh;
+}
+
+.admin-header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width:100%;
+    padding: .5vw;
+    background-color: rgb(12, 12, 12);
+}
+
+.admin-body{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.logout-button{
+    height:20px;
+    width: 100px;
+    align-self: center;
+}
+
+.crud-container{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1vw;
+    padding: 1vw;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.219);
+}
+
+.buttonContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+}
+
+.merch-mod{
+    width: 50%;
+    margin: 1vw;
+}
+
+.miniMerchImage{
+    width: 200px;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.merchItemMini{
+    padding: 1vw;
+    background-color: rgba(0, 0, 0, 0.644);
+}
+
+.admin-merch-name{
+    text-wrap: wrap;
+}
+
+.admin-show-name{
+    font-size: clamp(10px, 3vw, 100px);
+}
+
+.editMerchItemMini form{
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    padding: 1vw;
+    background-color: rgba(0, 0, 0, 0.644);
+}
+
+.hidden{
+    display:none;
+}
+
+.inputLabel p{
+    font-size: clamp(10px, 2vw, 250px);
+}
+
+.miniButton{
+    width: 250px;
+    height: 100%;
+    font-size: clamp(20px, 2vw, 250px);
+}
+
+.crud-panel{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+.merchsection, .reducedSection{
+    padding: 1vw;
+    border-bottom: 1px solid white;
+}
+
+
+.merchDrop {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.merchDrop::before,
+.merchDrop::after {
+    content: "";
+    position: absolute;
+    background: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.merchDrop::before {
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.merchDrop::after {
+    width: 2px;
+    height: 20px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.merchDrop.open::after {
+    transform: translateX(-50%);
+    height: 0;
+}
+
+.sectiontop{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reducedSection .admin-body{
+    display: none;
+}
+
+
+@media screen and (max-width:770px){
+
+    .admin-header{
+        padding: 2vw;
+    }
+
+    .admin-body{
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .merch-mod{
+        margin: 2vw;
+        width: 95%;
+        justify-self: center;
+    }
+
+    .merchItemMini{
+        padding: 2vw;
+        background-color: rgba(0, 0, 0, 0.644);
+    }
+
+    .editMerchItemMini form p{
+        font-size: clamp(20px, 2vw, 250px);
+    }
+}
