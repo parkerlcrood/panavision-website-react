@@ -59,8 +59,9 @@ function Admin() {
                 setUser(userData);
                 setAuthenticated(true);
 
-            } catch {
+            } catch (error) {
                 setAuthenticated(false);
+                handleLogout();
             } finally {
                 setCheckingAuth(false);
             }

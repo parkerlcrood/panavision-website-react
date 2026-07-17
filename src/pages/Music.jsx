@@ -34,8 +34,6 @@ function Music() {
         return (<div className="videopage"><h1>{error}</h1></div>);
     }
 
-    console.log(music);
-
     return <div className="music" id="top">
         <div className="musictable">
             {music.map((music) => (
