@@ -1,7 +1,8 @@
 function MusicSection(musicObj) {
 
     const music = musicObj.music;
-    const thumbnail = `${import.meta.env.BASE_URL}/${music.proj_id}`;
+    const thumbnail = `${import.meta.env.VITE_LOCAL_API_URL}/${music.proj_id}`;
+    console.log(`${import.meta.env.VITE_LOCAL_API_URL}/${music.proj_id}`);
 
     return (<>
         <div className="album-background">

@@ -2,6 +2,7 @@ import '../../css/style.css';
 import {useState, useEffect} from "react";
 import { getMusic } from '../services/api';
 import MusicSection from '../components/MusicSection';
+import LoadingScreen from '../components/LoadingScreen';
 
 function Music() {
 
@@ -26,12 +27,14 @@ function Music() {
         }, []);  
 
     if (loading) {
-        return (<div className="videopage"><h1>Loading...</h1></div>);
+        return (<LoadingScreen/>);
     }
 
     if (error) {
         return (<div className="videopage"><h1>{error}</h1></div>);
     }
+
+    console.log(music);
 
     return <div className="music" id="top">
         <div className="musictable">

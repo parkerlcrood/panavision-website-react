@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import BackToTop from '../components/BackToTop';
 import VideoSection from '../components/VideoSection';
 import { getVideos } from '../services/api';
+import LoadingScreen from '../components/LoadingScreen';
 
 
 function Videos() {
@@ -28,7 +29,7 @@ function Videos() {
         }, []);  
 
     if (loading) {
-        return (<div className="videopage"><h1>Loading...</h1></div>);
+        return (<LoadingScreen/>);
     }
 
     if (error) {

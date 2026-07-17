@@ -6,6 +6,9 @@ function MerchCard({ merch, onFavorite, onCartAdd, isInCart}) {
 
     return (
         <div className="merchitem">
+            <div className="merchphoto">
+                <img src={`${import.meta.env.VITE_LOCAL_API_URL}/blank.png`}/>
+            </div>
             <Link to={`/merch/${merch.merch_id}`} className="merchlink">
                 <p className="merchtext">{merch.merch_name}</p>
             </Link>

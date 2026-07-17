@@ -8,6 +8,7 @@ import '../../css/style.css';
 import BackToTop from '../components/BackToTop';
 import CoverVideo from "../components/CoverVideo";
 import CartItem from "../components/CartItem";
+import LoadingScreen from "../components/LoadingScreen";
 
 function MerchPage( {cart, setCart}){
     const [searchQuery, setSearchQuery] = useState("");
@@ -78,9 +79,15 @@ function MerchPage( {cart, setCart}){
     };
 
     if (loading) {
-        return (<article className="container">
-            <h2>Loading...</h2>
-            </article>);
+        return (<>
+            <CoverVideo/>
+            <main className="mainlike">
+                <div className="container">
+                    <LoadingScreen/>
+                </div>
+            </main>
+        </>
+        );
     }
 
     if (error) {

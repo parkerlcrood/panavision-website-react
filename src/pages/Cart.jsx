@@ -28,6 +28,10 @@ function Cart( {cart, setCart}) {
         return item;
     }
 
+    function removeFromCart(id){
+        setCart(cart.filter(item => item.merch_id !== id));
+    }
+
     return (
     <div>
         <div className="btmerchbanner">
@@ -41,19 +45,26 @@ function Cart( {cart, setCart}) {
             <div> 
                 <ul className="cartTable">
                     <li className="cartPageItem">
-                            <img className = "itemImage" src={`${import.meta.env.BASE_URL}/PanavisionLogoTrans.png`}/>
+                            <span className="itemImage">
+                                <img src={`${import.meta.env.VITE_LOCAL_API_URL}/PanavisionLogoTrans.png`}/>
+                            </span>
                             <p className = "itemName">Item Name</p>
                             <p className = "itemPrice">Price</p>
                             <button className = "deleteButton">
                                 Delete Item
                             </button>
                     </li>
-                    {cart.map((item) => (
-                        <CartPageItem key = {item.merch_id}  
-                            item = {item}
-                            remove = {removeItem}      
-                        />
-                    ))}
+                    <ul id="cart">
+                        {cart.map((item) => (
+                            <CartPageItem key = {item.merch_id}  
+                                item = {item}
+                                remove = {removeFromCart}      
+                            />
+                        ))}
+                        <li>
+                            <h1>Checkout is under construction...</h1>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </div>

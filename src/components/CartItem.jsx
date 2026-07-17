@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import TruncatedText from "./TruncatedMobileText";
 
 
 function CartItem({item, remove}) {
 
+    let merchName = item.merch_name
+
     return (
         <li className="cartItem" key={item.merch_id}>
-            <img className = "itemImage" src={`${import.meta.env.BASE_URL}${item.images[0]}`}/>
+            <span className="itemImage">
+                <img src={`${import.meta.env.VITE_LOCAL_API_URL}/blank.png`}/>
+            </span>
             <span className="itemName">  
                 <Link to={`/merch/${item.merch_id}`}>
-                    <p className = "itemLink">{item.merch_name}</p>
+                    <TruncatedText className = "itemLink" id={item} text={merchName}/>
                 </Link>
             </span> 
             <span className = "itemPrice">

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getMerchById } from "../services/api";
 import { Link } from "react-router-dom";
 import '../pages/merchpages/css/merchstyle.css';
+import LoadingScreen from "./LoadingScreen";
 
 function MerchDetailPage() {
     const {id} = useParams();
@@ -29,7 +30,7 @@ function MerchDetailPage() {
         <Link to={'/merchpage'}>
           <h3 className="btmerch">Back to Merch</h3>
         </Link>
-        <h2>Loading...</h2>
+        <LoadingScreen/>
       </>);
     if(error) return (<>
         <Link to={'/merchpage'}>

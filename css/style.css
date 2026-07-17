@@ -197,7 +197,7 @@ img, video, iframe {
     flex-direction: column;
     padding-bottom: 3vw;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
 }
 
@@ -405,7 +405,6 @@ div.open{
 
 div.open p{
     font-family: Helvetica Ultracondensed;
-    font-size: 20px;
     color: black;
 }
 
@@ -415,7 +414,6 @@ div.open:hover{
 
 .cartmenu button{
     display: flex;
-    width:100%;
     align-items: center;
     justify-content: center;
     border: none;
@@ -442,14 +440,14 @@ div.open > button{
 }
 
 #cartcontainer{
-    width: 100%;
+    width: auto;
+    height: auto;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
 }
 
 div.open li{
     display: flex;
-    padding-left: .5rem;
 }
 
 div.open li button{
@@ -463,6 +461,13 @@ div.open li p{
 }
 
 .main-content{
+    min-height: 100vh;
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -727,10 +732,7 @@ input{
 }
 
 .deleteButton{
-    width: 10%;
-    text-wrap: wrap;
-    font-size: clamp(15px, 2vw, 100px);
-    justify-self: flex-end;
+    width: 100px;
 }
 
 .favoriteItem{
@@ -793,6 +795,7 @@ input{
     width: 10%;
     aspect-ratio: 1/1;
     height: auto;
+    padding: .5vw;
 }
 
 .tableEntry{
@@ -903,16 +906,16 @@ footer{
 }
 
 .cartItem {
-    margin: 0;
-    padding: 0;
+    padding: .5vw;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     align-items: center;
-    width: 250px;
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
-    border-radius: 0;
-    background-color: transparent;
     border-right: 1px solid grey;
+    margin: 0;
+    overflow: hidden;
 }
 
 .cartItem .itemImage{
@@ -921,13 +924,13 @@ footer{
 }
 
 .cartItem .itemName{
-    text-align: center;
+    text-align: start;
     text-wrap: wrap;
-    min-width: 250px;
+    margin-left: 1vw;
 }
 
 .cartItem .itemPrice{
-    text-align: center;
+    text-align: star;
 }
 
 .cart-empty{
@@ -961,8 +964,10 @@ footer{
 .cartbottom{
     display: flex;
     flex-flow: row;
+    position: relative;
     width:100%;
     justify-content: flex-end;
+    bottom:0
 }
 
 .cartbottom button{
@@ -970,7 +975,8 @@ footer{
 }
 
 .cartbody{
-    height:200px;
+    width: 100%;
+    height:100%;
 }
 
 .album-description{
@@ -1234,6 +1240,7 @@ main{
 
     .cartmenu{
         display: flex;
+        flex-flow: column nowrap;
         position: fixed;
         align-items: center;
         justify-content: center;
@@ -1260,6 +1267,38 @@ main{
         padding: 0;
 
     }
+
+    .cartItem {
+        padding: 0vw;
+        margin: 0vw;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        width: clamp(160px, 25%, 250px);
+        height: auto;
+        background-color: transparent;
+        border-right: 1px solid grey;
+    }
+
+    .cartItem .itemImage{
+        width: 100px;
+        height: 100px;
+    }
+
+    .itemLink{
+        text-align: center;
+        text-wrap: wrap;
+        min-width: none;
+        margin: 0;
+        width: auto;
+    }
+
+    .deleteButton{
+        position: relative;
+        bottom: 0;
+    }
+
 
     div.open{
         display: flex;
@@ -1322,7 +1361,8 @@ main{
     }
 
     #cartcontainer{
-        width: 100%;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
     }
 
     div.open li{
@@ -1332,12 +1372,6 @@ main{
     div.open li button{
         font-family: Helvetica Ultracondensed;
         font-size: 15px;
-    }
-
-    div.open li p{
-        width: 85%;
-        text-wrap: wrap;
-        max-width: 100px;
     }
 
     .itemLink{
@@ -1481,13 +1515,8 @@ main{
     }
 
     .itemPrice{
-        width: 100%;
+        width: auto;
         text-align: center;
-
-    }
-
-    .deleteButton{
-        width: 25%;
     }
 
     .favoriteItem{
