@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
 
     const navigate = useNavigate();
-    const [userID, setUserID] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     
@@ -27,7 +27,7 @@ function Login() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({"user_id": userID, "password": password}),
+            body: JSON.stringify({"user_name": username, "password": password}),
         });
 
         const data = await res.json();
@@ -60,8 +60,8 @@ function Login() {
             <button>Home</button>
         </Link>
         <form onSubmit={(e) => handleSubmit(e)}>
-            <label htmlFor="login_id">User ID: </label>
-            <input type="text" className="login_id" name='login_id' value={userID} onChange={(e) => setUserID(e.target.value)}/>
+            <label htmlFor="login_id">Username: </label>
+            <input type="text" className="login_id" name='login_id' value={username} onChange={(e) => setUsername(e.target.value)}/>
             <label htmlFor="login_password">Password: </label>
             <input type="password" className="login_password" name='login_password' value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button type="submit">
