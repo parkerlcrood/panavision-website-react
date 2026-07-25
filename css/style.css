@@ -179,19 +179,6 @@ img, video, iframe {
     width: clamp(100px, 15vw, 500px);
 }
 
-.promoimagecontainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-}
-
-.promoimage{
-    width: 80%;
-    aspect-ratio: 16/9;
-}
-
 .videopage {
     display: flex;
     flex-direction: column;
@@ -580,10 +567,12 @@ input{
 
 .hero{
     display: flex;
-    justify-content: flex-start;
-    flex-flow: row-reverse nowrap;
-    align-content: flex-start;
-    height: 75vh;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
+    padding: 5vw;
+    gap: 5vw;
+    height: 100%;
     background-color: white;
 }
 
@@ -592,12 +581,28 @@ input{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+    align-self: center;
     width:50%;
     height:100%;
 }
 
 .promotext{
     font-size: clamp(50px, 5vw, 250px);
+}
+
+.promoimagecontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.promoimage{
+    width: 100%;
+    max-width: 600px; 
+    aspect-ratio: 1/1;
+    height: auto;
+    border: 2px solid black;
 }
 
 #promostatement{
@@ -1379,10 +1384,6 @@ main{
         text-align: center;
     }
 
-    .promoimage{
-        aspect-ratio: 16/9;
-    }
-
     .promoimagecontainer{
         display: flex;
         justify-content: center;
@@ -1414,11 +1415,8 @@ main{
     }
 
     .hero{
-        display: flex;
         justify-content: center;
-        flex-flow: column-reverse nowrap;
-        align-content: center;
-        height: 100%;
+        flex-flow: column nowrap;
         background-color: white;
     }
 
