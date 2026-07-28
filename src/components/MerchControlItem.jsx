@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getMerchImages } from "../services/api";
+import LoadingScreen from "./LoadingScreen";
+import MerchImageManager from "./MerchImageManager";
 
 
 function MerchControlItem({item, removeItem, refreshMerch}) {
@@ -9,6 +12,30 @@ function MerchControlItem({item, removeItem, refreshMerch}) {
     const [merchPrice, setMerchPrice] = useState("");
     const [merchDescription, setMerchDescription] = useState("");
     const [merchFunny, setMerchFunny] = useState("");
+    const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(()=>{
+        const load = async () => {
+            try {
+                const imagesRes = await getMerchImages(item.merch_id);
+                setImages(imagesRes);
+            } catch (err) {
+                setError("Item not found");
+            } finally {
+                setLoading(false);
+            }
+        };
+        load();
+    }, [item.merch_id]);
+
+    if(loading) return (<>
+        <LoadingScreen/>
+      </>);
+    if(error) return (<>
+        <h2>{error}</h2>
+      </>);
 
     const handleEdit = async (item) => {
         try {
@@ -37,6 +64,16 @@ function MerchControlItem({item, removeItem, refreshMerch}) {
     return (
         <>
             <li className={editing ? "hidden": "merchItemMini"}>
+                {images.length > 0 ? (
+                    <img 
+                        className="itemImage" 
+                        src={images[0].image_url}
+                    />
+                ) : (
+                    <div>
+                        <p>No Image</p>
+                    </div>
+                )}
                 <div className="miniMerchOtherContainer">
                     <div className="miniMerchName">  
                         <Link to={`/merch/${item.merch_id}`}>
@@ -66,6 +103,11 @@ function MerchControlItem({item, removeItem, refreshMerch}) {
             </li>
             <li className={editing ? "editMerchItemMini" : "hidden"}>
                 <form>
+                    <MerchImageManager
+                        merchId={item.merch_id}
+                        images={images}
+                        setImages={setImages}
+                    />
                     <label className="inputLabel" htmlFor="merchName"><p>New Merch Name:</p></label> 
                     <input name="merchName" type="text" value={merchName} onChange={(e) => setMerchName(e.target.value)}></input>
                     <label className="inputLabel" htmlFor="merchPrice"><p>New Price:</p></label> 

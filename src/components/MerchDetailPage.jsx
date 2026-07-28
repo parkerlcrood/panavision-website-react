@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getMerchById } from "../services/api";
+import { getMerchById, getMerchImages } from "../services/api";
 import { Link } from "react-router-dom";
 import '../pages/merchpages/css/merchstyle.css';
 import LoadingScreen from "./LoadingScreen";
@@ -8,6 +8,7 @@ import LoadingScreen from "./LoadingScreen";
 function MerchDetailPage() {
     const {id} = useParams();
     const [merch, setMerch] = useState(null);
+    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [activeImage, setActiveImage] = useState(0);
@@ -16,7 +17,9 @@ function MerchDetailPage() {
         const load = async () => {
             try {
                 const item = await getMerchById(id);
+                const imagesRes = await getMerchImages(id);
                 setMerch(item);
+                setImages(imagesRes);
             } catch (err) {
                 setError("Item not found");
             } finally {
@@ -38,8 +41,6 @@ function MerchDetailPage() {
         </Link>
         <h2>{error}</h2>
       </>);
-
-    const images = merch.images || [];
 
     const goLeft = () => {
         setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -67,7 +68,7 @@ function MerchDetailPage() {
             {images.length > 0 && (
                 <img
                   className="merchimage"
-                  src={`${import.meta.env.BASE_URL}${images[activeImage]}`}
+                  src={`${images[activeImage].image_url}`}
                   alt={merch.merch_name}
                 />
               )}
@@ -84,7 +85,7 @@ function MerchDetailPage() {
                 className={i === activeImage ? "active" : ""}
                 onClick={() => setActiveImage(i)}
               >
-                <img src={`${import.meta.env.BASE_URL}${img}`} alt={`${merch.merch_name} thumbnail ${i + 1}`}/>
+                <img src={img.image_url} alt={`${merch.merch_name} thumbnail ${i + 1}`}/>
               </li>
             ))}
           </ul>
