@@ -262,15 +262,33 @@ function Admin() {
         } 
     }
 
+    function getYoutubeId(input) {
+        try {
+            const url = new URL(input);
+
+            if (url.hostname.includes("youtu.be")) {
+                return url.pathname.slice(1);
+            }
+
+            return url.searchParams.get("v");
+        } catch {
+            return input; // already just an ID
+        }
+    }
+
     const handleAddVideo = async (e) => {
         try {
+
             const confirmed = window.confirm(`Are you sure you want to add this video ${e}?`);
+
+            if (!confirmed) return;
+
             const payload = {
-                video_id : youtubeID,
+                video_id : getYoutubeId(youtubeID),
                 title : videoName,
                 description : videoDesc
             }
-            if (!confirmed) return;
+            
             const res = await authFetch(`${import.meta.env.VITE_API_URL}/api/videos/`, {
                 method: "POST",
                 headers: {
@@ -501,7 +519,7 @@ function Admin() {
                         <ul className="crud-container">
                             <li className='merchItemMini'><p>Add Video</p></li>
                             <li className={addingVideo ? 'merchItemMini' : 'hidden'}>
-                                <label className="inputLabel" htmlFor="videoID"><p>YouTube Video ID:</p></label> 
+                                <label className="inputLabel" htmlFor="videoID"><p>YouTube Video URL:</p></label> 
                                 <input name="videoID" type="text" value={youtubeID} onChange={(e) => setYoutubeID(e.target.value)}></input>
                                 <label className="inputLabel" htmlFor="videoName"><p>Song Name:</p></label> 
                                 <input name="videoName" type="text" value={videoName} onChange={(e) => setVideoName(e.target.value)}></input>
